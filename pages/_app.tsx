@@ -17,6 +17,8 @@ const styledTheme = {
     mainColor: '#0b4987',
     redColor: '#cd0000',
     grayColor: '#999',
+    whiteColor: '#fff',
+    blackColor: '#000000',
     space: [
         '1rem',
         '2rem',

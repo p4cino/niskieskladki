@@ -1,4 +1,7 @@
 import {useEffect, useState} from 'react';
+import classNames from 'classnames';
+import {GoThreeBars} from "react-icons/go";
+import {media} from 'styled-bootstrap-grid';
 import Image from 'next/image'
 import Link from 'next/link'
 import styled from 'styled-components';
@@ -6,30 +9,65 @@ import {Container, Row, Col} from 'styled-bootstrap-grid';
 
 
 const Header = styled.header`
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   padding: 1rem 0;
   transition: all ease-in-out 0.4s;
   z-index: 2;
-  ${props => {
-    if (!props.toggle) {
-      return `
-        background-color: white;
-        box-shadow: 0 0 3px #b5b5b5;
-      `;
-    }
-  }}
+  color: #fff;
+
+  &.scrolled {
+    background-color: white;
+    box-shadow: 0 0 3px #b5b5b5;
+  }
 `;
 
 const Logo = styled.div`
   height: 2rem;
 `;
 
+const Hamburger = styled.button`
+  display: none;
+
+  ${media.xs`
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: ${props => props.theme.whiteColor};
+  `}
+  .scrolled & {
+    color: ${props => props.theme.blackColor};
+  }
+`;
+
 const Nav = styled.nav`
-  //background-color: black;
+  ${media.xs`
+    display: none;
+  `}
+  &.activeMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    //z-index: 3;
+  }
 `;
 
 const List = styled.ul`
+  ${media.xs`
+    height: auto;
+    flex-wrap: wrap;
+  `}
+
   height: 2rem;
   display: flex;
   justify-content: flex-end;
@@ -42,7 +80,17 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
+  ${media.xs`
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    & + & {
+    margin-top: 1rem;
+    }
+  `}
+
   padding: 0 ${props => props.theme.space[0]};
+  letter-spacing: 0.5px;
 
   &:first-child {
     padding-left: 0;
@@ -55,48 +103,50 @@ const ListItem = styled.li`
 
 const ListItemLink = styled.a`
   text-decoration: none;
-  ${props => {
-    if (props.toggle) {
-      return `
-        color: #cd0000;
-        font-weight: bold;
-      `;
-    } else {
-      return `
-        color: #999;
-      `;
+  color: ${props => props.theme.grayColor};
+
+  .scrolled & {
+    &.active {
+      color: red;
+      font-weight: bold;
     }
-  }}
+  }
+
+  &.active {
+    font-weight: bold;
+    color: white;
+  }
+
+  &.blue {
+    color: ${props => props.theme.mainColor};
+    font-weight: bold;
+  }
 `;
 
 const Navbar = () => {
     let listener = null
-    const [scrollState, setScrollState] = useState(true);
+    const [scrollState, setScrollState] = useState(false);
+    const [showMenu, setMenu] = useState(false);
 
     useEffect(() => {
-        listener = document.addEventListener("scroll", e => {
-            var scrolled = document.scrollingElement.scrollTop
+        listener = document.addEventListener("scroll", listener => {
+            let scrolled = document.scrollingElement.scrollTop;
             if (scrolled >= 70) {
-                if (scrollState !== false) {
-                    setScrollState(false);
-                }
+                setScrollState(true);
             } else {
-                if (scrollState !== true) {
-                    setScrollState(true);
-                }
+                setScrollState(false);
             }
         })
         return () => {
-            document.removeEventListener("scroll", listener)
-            console.log(scrollState)
+            document.removeEventListener("scroll", listener);
         }
-    }, [scrollState])
+    }, [scrollState]);
 
     return (
-        <Header toggle={scrollState}>
+        <Header className={classNames({scrolled: scrollState, dupa: true})}>
             <Container>
                 <Row>
-                    <Col col xl="2" lg="2" md="2" sm="2">
+                    <Col col xl="2" lg="2" md="2" sm="2" xs="6">
                         <Logo>
                             <Link href="/">
                                 <a>
@@ -110,11 +160,11 @@ const Navbar = () => {
                             </Link>
                         </Logo>
                     </Col>
-                    <Col col xl="10" lg="10" md="12" sm="10">
-                        <Nav role="navigation" aria-label="Nawigacja">
+                    <Col col xl="10" lg="10" md="12" sm="10" xs="12">
+                        <Nav role="navigation" aria-label="Nawigacja" className={classNames({activeMenu: false})}>
                             <List>
                                 <ListItem>
-                                    <ListItemLink toggle={true} href="#">O Nas</ListItemLink>
+                                    <ListItemLink className={classNames({active: true})} href="#">O Nas</ListItemLink>
                                 </ListItem>
                                 <ListItem>
                                     <ListItemLink href="#">Zbiórki</ListItemLink>
@@ -132,13 +182,16 @@ const Navbar = () => {
                                     <ListItemLink href="#">Kontakt</ListItemLink>
                                 </ListItem>
                                 <ListItem>
-                                    <ListItemLink href="#">Dołącz do nas</ListItemLink>
+                                    <ListItemLink className="blue" href="#">Dołącz do nas</ListItemLink>
                                 </ListItem>
                             </List>
                         </Nav>
                     </Col>
                 </Row>
             </Container>
+            <Hamburger>
+                <GoThreeBars title="Otwórz menu" size="1.5rem"/>
+            </Hamburger>
         </Header>
     );
 }
