@@ -18,7 +18,6 @@ const ButtonText = styled.span`
 
 
 const Button = ({children}) => {
-
     return (
         <ButtonItem>
             <ButtonText>

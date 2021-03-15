@@ -1,13 +1,14 @@
-// import styled from 'styled-components';
 import {Col, Container, Row} from "styled-bootstrap-grid";
+import Heading from "../../components/Heading/Heading";
+import Paragraph from "../../components/Paragraph/Paragraph";
 
 const HomeAboutUs = () => {
     return (
         <Container style={{height: '100%'}}>
             <Row style={{height: '100%'}}>
                 <Col xl="12" lg="12" md="12" sm="12">
-                    <h2>Kilka słów o nas</h2>
-                    <p>
+                    <Heading>Kilka słów o nas</Heading>
+                    <Paragraph>
                         Głównym celem stowarzyszenia jest propagowanie idei liberalizmu gospodarczego,
                         decentralizacji władzy
                         publicznej oraz wolności osobistej człowieka. Stowarzyszenie wspiera i promuje
@@ -39,7 +40,7 @@ const HomeAboutUs = () => {
                         osobom w trudnej sytuacji życiowej na zasadach dobrowolności i subsydiarności oraz promocja
                         postaw
                         dobroczynnych.
-                    </p>
+                    </Paragraph>
                 </Col>
             </Row>
         </Container>

@@ -103,9 +103,10 @@ const ListItem = styled.li`
 
 const ListItemLink = styled.a`
   text-decoration: none;
-  color: ${props => props.theme.grayColor};
+  color: ${props => props.theme.whiteColor};
 
   .scrolled & {
+    color: ${props => props.theme.grayColor};
     &.active {
       color: red;
       font-weight: bold;
@@ -143,7 +144,7 @@ const Navbar = () => {
     }, [scrollState]);
 
     return (
-        <Header className={classNames({scrolled: scrollState, dupa: true})}>
+        <Header className={classNames({scrolled: scrollState})}>
             <Container>
                 <Row>
                     <Col col xl="2" lg="2" md="2" sm="2" xs="6">

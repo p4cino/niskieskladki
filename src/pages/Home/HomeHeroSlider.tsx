@@ -3,66 +3,66 @@ import {Col, Container, Row} from "styled-bootstrap-grid";
 import Button from "../../components/Button/Button";
 import Carousel from "../../components/Carousel/Carousel";
 
+const sliderOptions = {
+    type: 'carousel',
+    // autoplay: 5000,
+    gap: 0,
+    perView: 1
+};
+
+const SlideBox = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  :before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+  }
+`;
+
+const SliderHeading = styled.h2`
+  //margin: 0;
+  padding: 0;
+  color: ${props => props.theme.whiteColor};
+  font-size: 5vw;
+  font-weight: normal;
+  text-align: left;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+`;
+
+const SliderDescription = styled.p`
+  margin: 0;
+  color: ${props => props.theme.whiteColor};
+  font-size: 12px;
+  font-weight: normal;
+  text-align: left;
+  letter-spacing: 3px;
+  margin-bottom: 3rem;
+`;
+
+const SliderButtonWrapper = styled.div`
+  display: flex;
+`;
+
+const SliderButtonItem = styled.div`
+  margin: 0 1rem;
+
+  &:first-child {
+    margin-left: 0;
+  }
+`;
+
 const HomeHeroSlider = () => {
-    const sliderOptions = {
-        type: 'carousel',
-        // autoplay: 5000,
-        gap: 0,
-        perView: 1
-    };
-
-    const SlideBox = styled.div`
-      width: 100vw;
-      height: 100vh;
-      position: relative;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-
-      :before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        position: absolute;
-        background: rgba(0, 0, 0, 0.5);
-      }
-    `;
-
-    const SliderHeading = styled.h2`
-      //margin: 0;
-      padding: 0;
-      color: ${props => props.theme.whiteColor};
-      font-size: 5vw;
-      font-weight: normal;
-      text-align: left;
-      letter-spacing: 1px;
-      margin-bottom: 2rem;
-    `;
-
-    const SliderDescription = styled.p`
-      margin: 0;
-      color: ${props => props.theme.whiteColor};
-      font-size: 12px;
-      font-weight: normal;
-      text-align: left;
-      letter-spacing: 3px;
-      margin-bottom: 3rem;
-    `;
-
-    const SliderButtonWrapper = styled.div`
-      display: flex;
-    `;
-
-    const SliderButtonItem = styled.div`
-      margin: 0 1rem;
-
-      &:first-child {
-        margin-left: 0;
-      }
-    `;
-
     return (
         <Carousel
             element="heroSlider"

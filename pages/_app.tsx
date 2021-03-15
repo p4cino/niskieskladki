@@ -19,6 +19,8 @@ const styledTheme = {
     grayColor: '#999',
     whiteColor: '#fff',
     blackColor: '#000000',
+    textColor: '#081f69',
+    headingColor: '#2f2f2f',
     space: [
         '1rem',
         '2rem',
