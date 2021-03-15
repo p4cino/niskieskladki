@@ -15,7 +15,7 @@ const SlideBox = styled.li`
   position: relative;
   background-color: ${props => props.theme.whiteColor};
   list-style: none;
-  min-height: 500px;
+  min-height: 200px;
 `;
 
 const SlideImage = styled.div`
@@ -28,25 +28,66 @@ const SlideImage = styled.div`
   }
 `;
 
+const SlideHeading = styled.div`
+  padding: 1rem;
+`;
+
 const TextContainer = styled.div`
-  padding: 0 20px 20px 20px;
+  min-height: 240px;
+  padding: 0 1rem;
+`;
+
+const SlideFooter = styled.div`
+  width: 100%;
+  padding: 0 1rem;
+`;
+
+const CircularProgressComponent = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const CircularCollected = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  padding-left: 1rem;
+`;
+
+const ProgressContainer = styled.div`
+  width: 40px;
+  position: relative;
+  display: flex;
+  padding: 1rem 0;
+`;
+
+const ProgressLabel = styled.span`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  font-weight: bold;
+  font-size: 0.7rem;
 `;
 
 function CircularProgressWithLabel(props: CircularProgressProps & { value: number }) {
     return (
-        <div>
-            <CircularProgress variant="determinate" color={"secondary"} {...props} />
-            <span>{`${Math.round(
-                props.value,
-            )}%`}</span>
-        </div>
+        <CircularProgressComponent>
+            <ProgressContainer>
+                <CircularProgress variant="determinate" color={"secondary"} {...props} />
+                <ProgressLabel>{`${Math.round(props.value,)}%`}</ProgressLabel>
+            </ProgressContainer>
+            <CircularCollected>
+                1234zł<br/>
+                123456zł
+            </CircularCollected>
+        </CircularProgressComponent>
     );
 }
 
 const sliderOptions = {
     type: 'carousel',
-    // autoplay: 5000,
-    gap: 25,
+    gap: 16,
     perView: 3,
     breakpoints: {
         800: {
@@ -64,10 +105,10 @@ const HomeOurCollections = () => {
             <Container>
                 <Row style={{height: '100%'}}>
                     <Col xl="12" lg="12" md="12" sm="12">
-                        <Heading>
+                        <Heading style={{padding: '2rem 0'}}>
                             Nasze zbiórki
                         </Heading>
-                        <Paragraph>
+                        <Paragraph style={{paddingBottom: '1rem'}}>
                             Poniżej znajdują się informacje o zrealizowanych przez nas projektach w ramach akcji
                             #LudzkieDziałanie.
                         </Paragraph>
@@ -80,14 +121,13 @@ const HomeOurCollections = () => {
                                     <img src="https://niskieskladki.pl/assets/img-temp/800x496/zbiorka4.png" alt=""
                                          loading="lazy"/>
                                 </SlideImage>
-                                <TextContainer>
-                                    <Heading
-                                        size={"small"}
-                                        underline={false}
-                                    >
+                                <SlideHeading>
+                                    <Heading size={"small"} underline={false}>
                                         NS dla małej zuzi
                                     </Heading>
-                                    <Paragraph style={{paddingBottom: 20}}>
+                                </SlideHeading>
+                                <TextContainer>
+                                    <Paragraph color={"gray"} size={"small"}>
                                         Pani Katarzyna wraz z mężem panem Mariuszem wychowuję dwoje dzieci - Zuzię i
                                         Wiktorka.
                                         Rodzina od kilku lat jest w trudnej sytuacji. Zuzia jest chora, ma białaczkę.
@@ -102,76 +142,59 @@ const HomeOurCollections = () => {
                                         na
                                         osobę miesięcznie.
                                     </Paragraph>
-                                    <div>
-                                        <CircularProgressWithLabel value={75}/>
-                                    </div>
                                 </TextContainer>
+                                <SlideFooter>
+                                    <CircularProgressWithLabel value={75}/>
+                                </SlideFooter>
                             </SlideBox>
                             <SlideBox>
                                 <SlideImage>
-                                    <img src="https://niskieskladki.pl/assets/img-temp/800x496/zbiorka4.png" alt=""
+                                    <img src="https://niskieskladki.pl/assets/img-temp/800x496/zbiorka1.png" alt=""
                                          loading="lazy"/>
                                 </SlideImage>
-                                <TextContainer>
-                                    <Heading
-                                        size={"small"}
-                                        underline={false}
-                                    >
+                                <SlideHeading>
+                                    <Heading size={"small"} underline={false}>
                                         NS dla małej zuzi
                                     </Heading>
-                                    <Paragraph style={{paddingBottom: 20}}>
-                                        Pani Katarzyna wraz z mężem panem Mariuszem wychowuję dwoje dzieci - Zuzię i
-                                        Wiktorka.
-                                        Rodzina od kilku lat jest w trudnej sytuacji. Zuzia jest chora, ma białaczkę.
-                                        Życie
-                                        rodziny to głównie szpitale i wizyty u specjalistów. Obecnie dziewczynka
-                                        przebywa w
-                                        domu, ale potrzebuje stałej opieki. Musi przebywać w sterylnych warunkach,
-                                        ponieważ
-                                        nie
-                                        ma odporności. Po odjęciu kosztów utrzymania mieszkania oraz leków zostaje im
-                                        460zł
-                                        na
-                                        osobę miesięcznie.
+                                </SlideHeading>
+                                <TextContainer>
+                                    <Paragraph color={"gray"} size={"small"}>
+                                        W maju 2019 roku postanowiliśmy w ramach Ludzkiego Działania wspomóc budowę
+                                        placu zabaw dla Pogotowia Opiekuńczego w Lublinie. Zebraliśmy na ten cel 4 256
+                                        zł. Realizacja inwestycji pomoże dzieciom przejść łagodniej przez traumatyczne
+                                        przeżycie, jakim jest umieszczenie w placówce opiekuńczo-wychowawczej.
                                     </Paragraph>
-                                    <div>
-                                        <CircularProgressWithLabel value={75}/>
-                                    </div>
                                 </TextContainer>
+                                <SlideFooter>
+                                    <CircularProgressWithLabel value={100}/>
+                                </SlideFooter>
                             </SlideBox>
                             <SlideBox>
                                 <SlideImage>
-                                    <img src="https://niskieskladki.pl/assets/img-temp/800x496/zbiorka4.png" alt=""
+                                    <img src="https://niskieskladki.pl/assets/img-temp/800x496/zbiorka3.png" alt=""
                                          loading="lazy"/>
                                 </SlideImage>
-                                <TextContainer>
-                                    <Heading
-                                        size={"small"}
-                                        underline={false}
-                                    >
-                                        NS dla małej zuzi
+                                <SlideHeading>
+                                    <Heading size={"small"} underline={false}>
+                                        Stypendium NS
                                     </Heading>
-                                    <Paragraph style={{paddingBottom: 20}}>
-                                        Pani Katarzyna wraz z mężem panem Mariuszem wychowuję dwoje dzieci - Zuzię i
-                                        Wiktorka.
-                                        Rodzina od kilku lat jest w trudnej sytuacji. Zuzia jest chora, ma białaczkę.
-                                        Życie
-                                        rodziny to głównie szpitale i wizyty u specjalistów. Obecnie dziewczynka
-                                        przebywa w
-                                        domu, ale potrzebuje stałej opieki. Musi przebywać w sterylnych warunkach,
-                                        ponieważ
-                                        nie
-                                        ma odporności. Po odjęciu kosztów utrzymania mieszkania oraz leków zostaje im
-                                        460zł
-                                        na
-                                        osobę miesięcznie.
+                                </SlideHeading>
+                                <TextContainer>
+                                    <Paragraph color={"gray"} size={"small"}>
+                                        Jedna z pierwszych odnotowanych zbiórek dotyczyła wsparcia członkini naszej
+                                        grupy. Znalazła się ona w nieciekawej sytuacji finansowej, a dzięki pozostałym
+                                        użytkownikom Niskich Składek mogła kontynuować swoją edukację, oraz chociaż na
+                                        pewien czas przestać martwić się o swoją przyszłość. Ta zbiórka udowodniła nam
+                                        jaką Niskie Składki stanowią siłę oraz, że wbrew obiegowej opinii, ludzie nie są
+                                        obojętni na ludzką krzywdę.
                                     </Paragraph>
-                                    <div>
-                                        <CircularProgressWithLabel value={75}/>
-                                    </div>
                                 </TextContainer>
+                                <SlideFooter>
+                                    <CircularProgressWithLabel value={17}/>
+                                </SlideFooter>
                             </SlideBox>
                         </Carousel>
+
                     </Col>
                 </Row>
             </Container>
