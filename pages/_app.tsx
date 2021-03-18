@@ -2,6 +2,7 @@ import {ThemeProvider, createGlobalStyle} from 'styled-components';
 import {GridThemeProvider, BaseCSS} from 'styled-bootstrap-grid';
 import {Normalize} from 'styled-normalize'
 import Head from 'next/head';
+import Footer from "../src/components/Footer/Footer";
 
 const gridTheme = {
     breakpoints: {
@@ -54,6 +55,7 @@ export default function App({Component: Component, pageProps}) {
                     <BaseCSS/>
                     <GlobalStyle/>
                     <Component {...pageProps} />
+                    <Footer/>
                 </>
             </GridThemeProvider>
         </ThemeProvider>

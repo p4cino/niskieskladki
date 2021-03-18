@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import {Col, Container, Row} from "styled-bootstrap-grid";
 import styled from 'styled-components';
 import Heading from "../../components/Heading/Heading";
@@ -71,6 +70,10 @@ const ProgressLabel = styled.span`
 `;
 
 function CircularProgressWithLabel(props: CircularProgressProps & { value: number }) {
+    if (props.value > 100) {
+        props.value = 100;
+    }
+
     return (
         <CircularProgressComponent>
             <ProgressContainer>
@@ -101,104 +104,106 @@ const sliderOptions = {
 
 const HomeOurCollections = () => {
     return (
-        <section style={{backgroundColor: '#f7f7f7', height: '100%'}}>
-            <Container>
-                <Row style={{height: '100%'}}>
-                    <Col xl="12" lg="12" md="12" sm="12">
-                        <Heading style={{padding: '2rem 0'}}>
+        <Container>
+            <Row style={{height: '100%'}}>
+                <Col xl="12" lg="12" md="12" sm="12">
+                    <div style={{display: 'flex', justifyContent: 'center', width: '100%', paddingBottom: '2rem'}}>
+                        <Heading color="main" underline={false}>
                             Nasze zbiórki
                         </Heading>
-                        <Paragraph style={{paddingBottom: '1rem'}}>
-                            Poniżej znajdują się informacje o zrealizowanych przez nas projektach w ramach akcji
-                            #LudzkieDziałanie.
-                        </Paragraph>
-                        <Carousel
-                            element="ourCollectionsSlider"
-                            options={sliderOptions}
-                        >
-                            <SlideBox>
-                                <SlideImage>
-                                    <img src="https://niskieskladki.pl/assets/img-temp/800x496/zbiorka4.png" alt=""
-                                         loading="lazy"/>
-                                </SlideImage>
-                                <SlideHeading>
-                                    <Heading size={"small"} underline={false}>
-                                        NS dla małej zuzi
-                                    </Heading>
-                                </SlideHeading>
-                                <TextContainer>
-                                    <Paragraph color={"gray"} size={"small"}>
-                                        Pani Katarzyna wraz z mężem panem Mariuszem wychowuję dwoje dzieci - Zuzię i
-                                        Wiktorka.
-                                        Rodzina od kilku lat jest w trudnej sytuacji. Zuzia jest chora, ma białaczkę.
-                                        Życie
-                                        rodziny to głównie szpitale i wizyty u specjalistów. Obecnie dziewczynka
-                                        przebywa w
-                                        domu, ale potrzebuje stałej opieki. Musi przebywać w sterylnych warunkach,
-                                        ponieważ
-                                        nie
-                                        ma odporności. Po odjęciu kosztów utrzymania mieszkania oraz leków zostaje im
-                                        460zł
-                                        na
-                                        osobę miesięcznie.
-                                    </Paragraph>
-                                </TextContainer>
-                                <SlideFooter>
-                                    <CircularProgressWithLabel value={75}/>
-                                </SlideFooter>
-                            </SlideBox>
-                            <SlideBox>
-                                <SlideImage>
-                                    <img src="https://niskieskladki.pl/assets/img-temp/800x496/zbiorka1.png" alt=""
-                                         loading="lazy"/>
-                                </SlideImage>
-                                <SlideHeading>
-                                    <Heading size={"small"} underline={false}>
-                                        NS dla małej zuzi
-                                    </Heading>
-                                </SlideHeading>
-                                <TextContainer>
-                                    <Paragraph color={"gray"} size={"small"}>
-                                        W maju 2019 roku postanowiliśmy w ramach Ludzkiego Działania wspomóc budowę
-                                        placu zabaw dla Pogotowia Opiekuńczego w Lublinie. Zebraliśmy na ten cel 4 256
-                                        zł. Realizacja inwestycji pomoże dzieciom przejść łagodniej przez traumatyczne
-                                        przeżycie, jakim jest umieszczenie w placówce opiekuńczo-wychowawczej.
-                                    </Paragraph>
-                                </TextContainer>
-                                <SlideFooter>
-                                    <CircularProgressWithLabel value={100}/>
-                                </SlideFooter>
-                            </SlideBox>
-                            <SlideBox>
-                                <SlideImage>
-                                    <img src="https://niskieskladki.pl/assets/img-temp/800x496/zbiorka3.png" alt=""
-                                         loading="lazy"/>
-                                </SlideImage>
-                                <SlideHeading>
-                                    <Heading size={"small"} underline={false}>
-                                        Stypendium NS
-                                    </Heading>
-                                </SlideHeading>
-                                <TextContainer>
-                                    <Paragraph color={"gray"} size={"small"}>
-                                        Jedna z pierwszych odnotowanych zbiórek dotyczyła wsparcia członkini naszej
-                                        grupy. Znalazła się ona w nieciekawej sytuacji finansowej, a dzięki pozostałym
-                                        użytkownikom Niskich Składek mogła kontynuować swoją edukację, oraz chociaż na
-                                        pewien czas przestać martwić się o swoją przyszłość. Ta zbiórka udowodniła nam
-                                        jaką Niskie Składki stanowią siłę oraz, że wbrew obiegowej opinii, ludzie nie są
-                                        obojętni na ludzką krzywdę.
-                                    </Paragraph>
-                                </TextContainer>
-                                <SlideFooter>
-                                    <CircularProgressWithLabel value={17}/>
-                                </SlideFooter>
-                            </SlideBox>
-                        </Carousel>
+                    </div>
+                    <Paragraph>
+                        Poniżej znajdują się informacje o zrealizowanych przez nas projektach w ramach akcji
+                        #LudzkieDziałanie.
+                    </Paragraph>
+                </Col>
+                <Col xl="12" lg="12" md="12" sm="12">
+                    <Carousel
+                        element="ourCollectionsSlider"
+                        options={sliderOptions}
+                    >
+                        <SlideBox>
+                            <SlideImage>
+                                <img src="https://niskieskladki.pl/assets/img-temp/800x496/zbiorka4.png" alt=""
+                                     loading="lazy"/>
+                            </SlideImage>
+                            <SlideHeading>
+                                <Heading size={"small"} underline={false}>
+                                    NS dla małej zuzi
+                                </Heading>
+                            </SlideHeading>
+                            <TextContainer>
+                                <Paragraph color={"gray"} size={"small"}>
+                                    Pani Katarzyna wraz z mężem panem Mariuszem wychowuję dwoje dzieci - Zuzię i
+                                    Wiktorka.
+                                    Rodzina od kilku lat jest w trudnej sytuacji. Zuzia jest chora, ma białaczkę.
+                                    Życie
+                                    rodziny to głównie szpitale i wizyty u specjalistów. Obecnie dziewczynka
+                                    przebywa w
+                                    domu, ale potrzebuje stałej opieki. Musi przebywać w sterylnych warunkach,
+                                    ponieważ
+                                    nie
+                                    ma odporności. Po odjęciu kosztów utrzymania mieszkania oraz leków zostaje im
+                                    460zł
+                                    na
+                                    osobę miesięcznie.
+                                </Paragraph>
+                            </TextContainer>
+                            <SlideFooter>
+                                <CircularProgressWithLabel value={75}/>
+                            </SlideFooter>
+                        </SlideBox>
+                        <SlideBox>
+                            <SlideImage>
+                                <img src="https://niskieskladki.pl/assets/img-temp/800x496/zbiorka1.png" alt=""
+                                     loading="lazy"/>
+                            </SlideImage>
+                            <SlideHeading>
+                                <Heading size={"small"} underline={false}>
+                                    NS dla małej zuzi
+                                </Heading>
+                            </SlideHeading>
+                            <TextContainer>
+                                <Paragraph color={"gray"} size={"small"}>
+                                    W maju 2019 roku postanowiliśmy w ramach Ludzkiego Działania wspomóc budowę
+                                    placu zabaw dla Pogotowia Opiekuńczego w Lublinie. Zebraliśmy na ten cel 4 256
+                                    zł. Realizacja inwestycji pomoże dzieciom przejść łagodniej przez traumatyczne
+                                    przeżycie, jakim jest umieszczenie w placówce opiekuńczo-wychowawczej.
+                                </Paragraph>
+                            </TextContainer>
+                            <SlideFooter>
+                                <CircularProgressWithLabel value={100}/>
+                            </SlideFooter>
+                        </SlideBox>
+                        <SlideBox>
+                            <SlideImage>
+                                <img src="https://niskieskladki.pl/assets/img-temp/800x496/zbiorka3.png" alt=""
+                                     loading="lazy"/>
+                            </SlideImage>
+                            <SlideHeading>
+                                <Heading size={"small"} underline={false}>
+                                    Stypendium NS
+                                </Heading>
+                            </SlideHeading>
+                            <TextContainer>
+                                <Paragraph color={"gray"} size={"small"}>
+                                    Jedna z pierwszych odnotowanych zbiórek dotyczyła wsparcia członkini naszej
+                                    grupy. Znalazła się ona w nieciekawej sytuacji finansowej, a dzięki pozostałym
+                                    użytkownikom Niskich Składek mogła kontynuować swoją edukację, oraz chociaż na
+                                    pewien czas przestać martwić się o swoją przyszłość. Ta zbiórka udowodniła nam
+                                    jaką Niskie Składki stanowią siłę oraz, że wbrew obiegowej opinii, ludzie nie są
+                                    obojętni na ludzką krzywdę.
+                                </Paragraph>
+                            </TextContainer>
+                            <SlideFooter>
+                                <CircularProgressWithLabel value={17}/>
+                            </SlideFooter>
+                        </SlideBox>
+                    </Carousel>
 
-                    </Col>
-                </Row>
-            </Container>
-        </section>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 

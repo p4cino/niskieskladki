@@ -31,6 +31,10 @@ const ParagraphStyle = styled.p`
 
   &.heading {
     color: ${props => props.theme.headingColor};
+  } 
+  
+  &.white {
+    color: ${props => props.theme.whiteColor};
   }
 
   &.small {
@@ -40,7 +44,7 @@ const ParagraphStyle = styled.p`
 
 `;
 
-type Color = "black" | "gray" | "red" | "main" | "text" | "heading";
+type Color = "black" | "gray" | "red" | "main" | "text" | "heading" | "white";
 type Size = "smallest" | "small" | "big";
 
 type Props = {
