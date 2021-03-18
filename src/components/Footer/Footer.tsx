@@ -23,12 +23,12 @@ const Footer = () => {
                     </Col>
                     <Col xl="6" lg="6" md="6" sm="6" xs={'6'}>
                         <div style={{display: 'flex', justifyContent: 'flex-end'}}>
-                            <a href="#" style={{marginRight: '1rem'}}>
+                            <a href="https://twitter.com/NiskieSkladki" target="_blank" style={{marginRight: '1rem'}}>
                                 <Icon>
                                     <FiTwitter/>
                                 </Icon>
                             </a>
-                            <a href="#">
+                            <a href="https://www.facebook.com/niskieskladki" target="_blank">
                                 <Icon>
                                     <FiFacebook/>
                                 </Icon>

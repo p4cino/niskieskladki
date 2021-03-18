@@ -3,6 +3,7 @@ import HomeHeroSlider from "./HomeHeroSlider";
 import HomeAboutUs from "./HomeAboutUs";
 import HomeOurCollections from "./HomeOurCollections";
 import HomeOurActivities from "./HomeOurActivities";
+import HomeOurPatron from "./HomeOurPatron";
 
 const Home = () => {
     return (
@@ -19,6 +20,9 @@ const Home = () => {
             </section>
             <section style={{backgroundColor: '#0b4987', paddingTop: '4rem', paddingBottom: '4rem'}}>
                 <HomeOurActivities/>
+            </section>
+            <section style={{backgroundImage: 'url(/images/section/mises.jpg)', minHeight: '100vh', paddingTop: '4rem', paddingBottom: '4rem'}}>
+                <HomeOurPatron/>
             </section>
         </>
     );

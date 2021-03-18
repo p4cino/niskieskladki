@@ -112,10 +112,12 @@ const HomeOurCollections = () => {
                             Nasze zbiórki
                         </Heading>
                     </div>
-                    <Paragraph>
-                        Poniżej znajdują się informacje o zrealizowanych przez nas projektach w ramach akcji
-                        #LudzkieDziałanie.
-                    </Paragraph>
+                    <div style={{display: 'flex', justifyContent: 'center', width: '100%', paddingBottom: '3rem', textAlign: 'center'}}>
+                        <Paragraph>
+                            Poniżej znajdują się informacje o zrealizowanych przez nas projektach w ramach akcji
+                            <strong>#LudzkieDziałanie</strong>.
+                        </Paragraph>
+                    </div>
                 </Col>
                 <Col xl="12" lg="12" md="12" sm="12">
                     <Carousel

@@ -42,6 +42,10 @@ const HeadingStyle = styled.h2`
   &.small {
     font-size: 1rem;
   }
+  
+  &.large {
+    font-size: 3rem;
+  }
 
   &.underline {
     text-decoration: underline ${props => props.theme.mainColor};
@@ -51,12 +55,14 @@ const HeadingStyle = styled.h2`
 
 type Color = "black" | "gray" | "red" | "main" | "text" | "heading" | "white";
 type Size = "small" | "normal" | "medium" | "large";
+type Type = "h1" | "h2" | "h3";
 
 type Props = {
     size?: Size;
     color?: Color;
     children: any;
     underline?: boolean;
+    type?: Type;
 }
 
 const Heading: FunctionComponent<Props> = (
@@ -64,11 +70,12 @@ const Heading: FunctionComponent<Props> = (
         size,
         color,
         underline = true,
+        type,
         children,
         ...props
     }) => {
     return (
-        <HeadingStyle
+        <HeadingStyle as={type}
             className={classNames(size, {underline: underline}, color)}
             {...props}
         >

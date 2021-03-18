@@ -50,12 +50,14 @@ type Size = "smallest" | "small" | "big";
 type Props = {
     color?: Color;
     size?: Size;
+    center?: boolean;
 }
 
 const Paragraph: FunctionComponent<Props> = (
     {
         color = "text",
         size,
+        center,
         children,
         ...props
     }) => {
