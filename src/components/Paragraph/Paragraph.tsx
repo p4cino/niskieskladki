@@ -31,8 +31,8 @@ const ParagraphStyle = styled.p`
 
   &.heading {
     color: ${props => props.theme.headingColor};
-  } 
-  
+  }
+
   &.white {
     color: ${props => props.theme.whiteColor};
   }
@@ -42,6 +42,9 @@ const ParagraphStyle = styled.p`
     line-height: 1.5rem;
   }
 
+  &.center {
+    text-align: center;
+  }
 `;
 
 type Color = "black" | "gray" | "red" | "main" | "text" | "heading" | "white";
@@ -63,7 +66,7 @@ const Paragraph: FunctionComponent<Props> = (
     }) => {
     return (
         <ParagraphStyle
-            className={classNames(color, size)}
+            className={classNames(color, size, {center: center})}
             {...props}
         >
             {children}
