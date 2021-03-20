@@ -21,7 +21,7 @@ const Home = () => {
             <section style={{backgroundColor: '#0b4987', paddingTop: '4rem', paddingBottom: '4rem'}}>
                 <HomeOurActivities/>
             </section>
-            <section style={{backgroundImage: 'url(/images/section/mises.jpg)', minHeight: '100vh', paddingTop: '4rem', paddingBottom: '4rem'}}>
+            <section style={{backgroundImage: 'url(/images/section/mises.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh', paddingTop: '4rem', paddingBottom: '4rem'}}>
                 <HomeOurPatron/>
             </section>
         </>

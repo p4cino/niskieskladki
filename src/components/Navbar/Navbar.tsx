@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import classNames from 'classnames';
-import {GoThreeBars} from "react-icons/go";
+import {GoThreeBars, GoX} from "react-icons/go";
 import {media} from 'styled-bootstrap-grid';
 import Image from 'next/image'
 import Link from 'next/link'
@@ -33,7 +33,7 @@ const Hamburger = styled.button`
   ${media.xs`
     display: flex;
     position: absolute;
-    top: 50%;
+    top: 2rem;
     right: 1rem;
     transform: translateY(-50%);
     border: none;
@@ -41,7 +41,7 @@ const Hamburger = styled.button`
     color: ${props => props.theme.whiteColor};
   `}
   .scrolled & {
-    color: ${props => props.theme.blackColor};
+    color: ${props => props.theme.mainColor};
   }
 `;
 
@@ -49,6 +49,7 @@ const Nav = styled.nav`
   ${media.xs`
     display: none;
   `}
+  
   &.activeMenu {
     position: fixed;
     top: 0;
@@ -58,7 +59,16 @@ const Nav = styled.nav`
     display: flex;
     align-items: center;
     background-color: black;
-    //z-index: 3;
+  }
+
+  &.show {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: -3rem;
+    left: 0;
+    background-color: ${props => props.theme.blackColor};
+    height: 100vh;
   }
 `;
 
@@ -107,6 +117,7 @@ const ListItemLink = styled.a`
 
   .scrolled & {
     color: ${props => props.theme.grayColor};
+
     &.active {
       color: red;
       font-weight: bold;
@@ -137,11 +148,16 @@ const Navbar = () => {
             } else {
                 setScrollState(false);
             }
-        })
+        });
+        if (showMenu) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
         return () => {
             document.removeEventListener("scroll", listener);
         }
-    }, [scrollState]);
+    }, [scrollState, showMenu]);
 
     return (
         <Header className={classNames({scrolled: scrollState})}>
@@ -151,18 +167,27 @@ const Navbar = () => {
                         <Logo>
                             <Link href="/">
                                 <a>
-                                    <Image
-                                        src="/images/logo.png"
-                                        alt="Niskie Składki Logo"
-                                        layout='fill'
-                                    />
-                                    {/*Alt: Przejscie do strony glownej*/}
+                                    {scrollState && (
+                                        <Image
+                                            src="/images/logo.svg"
+                                            alt="Niskie Składki Logo"
+                                            layout='fill'
+                                        />
+                                    )}
+                                    {!scrollState && (
+                                        <Image
+                                            src="/images/logo-light.svg"
+                                            alt="Niskie Składki Logo"
+                                            layout='fill'
+                                        />
+                                    )}
                                 </a>
                             </Link>
                         </Logo>
                     </Col>
                     <Col col xl="10" lg="10" md="12" sm="10" xs="12">
-                        <Nav role="navigation" aria-label="Nawigacja" className={classNames({activeMenu: false})}>
+                        <Nav role="navigation" aria-label="Nawigacja"
+                             className={classNames({activeMenu: false, show: showMenu})}>
                             <List>
                                 <ListItem>
                                     <ListItemLink className={classNames({active: true})} href="#">O Nas</ListItemLink>
@@ -190,8 +215,9 @@ const Navbar = () => {
                     </Col>
                 </Row>
             </Container>
-            <Hamburger>
-                <GoThreeBars title="Otwórz menu" size="1.5rem"/>
+            <Hamburger onClick={() => setMenu(!showMenu)}>
+                {showMenu ? <GoX title="Zamknij Menu" size="1.5rem"/> :
+                    <GoThreeBars title="Otwórz menu" size="1.5rem"/>}
             </Hamburger>
         </Header>
     );

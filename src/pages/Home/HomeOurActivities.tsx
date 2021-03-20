@@ -1,5 +1,6 @@
 import {Col, Container, Row} from "styled-bootstrap-grid";
 import styled from 'styled-components';
+import Image from 'next/image';
 import ReactPlayer from 'react-player/youtube'
 import Heading from "../../components/Heading/Heading";
 import Paragraph from "../../components/Paragraph/Paragraph";
@@ -84,7 +85,7 @@ const HomeOurActivities = () => {
                     <ArticleCarousel options={sliderOptions} element="OurActivities">
                         <SlideBox>
                             <Row alignItems="center">
-                                <Col xl="6" lg="6" md="6" sm="6" xs="12" xsOrder={1}>
+                                <Col xl="6" lg="6" md="12" sm="12" xs="12" xsOrder={1}>
                                     <div>
                                         <ReactPlayer
                                             height={290}
@@ -94,7 +95,7 @@ const HomeOurActivities = () => {
                                         />
                                     </div>
                                 </Col>
-                                <Col xl="6" lg="6" md="6" sm="6" xs="12" smOrder={0}>
+                                <Col xl="6" lg="6" md="12" sm="12" xs="12" xsOrder={0}>
                                     <TextContainer>
                                         <div style={{display: 'flex', width: '100%'}}>
                                             <Heading color={"white"} size={"small"}>#Posiłekdlalekarza</Heading>
@@ -118,8 +119,34 @@ const HomeOurActivities = () => {
                             </Row>
                         </SlideBox>
                         <SlideBox>
-                            <div>Obrazek</div>
-                            <div>Tekst</div>
+                            <Row alignItems="center">
+                                <Col xl="6" lg="6" md="12" sm="12" xs="12" xsOrder={1}>
+                                    <div>
+                                        <img style={{width: "100%"}} src="/images/section/Veto_TVP.png" alt=""/>
+                                    </div>
+                                </Col>
+                                <Col xl="6" lg="6" md="12" sm="12" xs="12" xsOrder={0}>
+                                    <TextContainer>
+                                        <div style={{display: 'flex', width: '100%'}}>
+                                            <Heading color={"white"} size={"small"}>#Posiłekdlalekarza</Heading>
+                                        </div>
+                                        <div style={{display: 'flex', width: '100%', paddingBottom: '1rem'}}>
+                                            <Heading color={"white"} size={"smallest"}>Współorganizator</Heading>
+                                        </div>
+                                        <Paragraph color={"white"} size={"small"}>
+                                            Największą i najbardziej rozpoznawalną akcją dobroczynną jest zorganizowana
+                                            w 2020 roku, przez Stowarzyszenie Niskie Składki, Fundację Otwarty Dialog,
+                                            Spontaniczny Sztab Obywatelski, ze wsparciem Patryka Wachowca (FOR)
+                                            ogólnopolska akcja Posiłek Dla Lekarza. Akcja polegała na zwrocie
+                                            (refundacji) udokumentowanych kosztów zamówień posiłków dostarczanych przez
+                                            restauracje osobom zatrudnionym w służbie zdrowia, a także hospitalizowanym
+                                            w związku z zarażeniem koronawirusem i tym, które się nimi opiekowały w
+                                            placówkach służby zdrowia. Łącznie podczas zbiórki zebrano ponad pół miliona
+                                            złotych, a o akcji informowały największe portale oraz stacje telewizyjne.
+                                        </Paragraph>
+                                    </TextContainer>
+                                </Col>
+                            </Row>
                         </SlideBox>
                     </ArticleCarousel>
                 </Col>
