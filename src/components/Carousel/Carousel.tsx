@@ -3,6 +3,7 @@ import Glide from '@glidejs/glide';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import {FiChevronLeft, FiChevronRight} from "react-icons/fi";
+import A11yText from "../A11yText/A11yText";
 
 const GlideBox = styled.section`
   position: relative;
@@ -68,8 +69,8 @@ const Carousel = ({element = 'glide', options, children}) => {
                 </ul>
             </div>
             <Arrows className="glide__arrows" data-glide-el="controls">
-                <Arrow className="glide__arrow glide__arrow--left" data-glide-dir="<"><FiChevronLeft/></Arrow>
-                <Arrow className="glide__arrow glide__arrow--right" data-glide-dir=">"><FiChevronRight/></Arrow>
+                <Arrow className="glide__arrow glide__arrow--left" data-glide-dir="<"><FiChevronLeft/><A11yText>{`Poprzedni slajd`}</A11yText></Arrow>
+                <Arrow className="glide__arrow glide__arrow--right" data-glide-dir=">"><FiChevronRight/><A11yText>{`Następny slajd`}</A11yText></Arrow>
             </Arrows>
         </GlideBox>
     )
