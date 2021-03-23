@@ -1,8 +1,8 @@
 import {Col, Container, Row} from "styled-bootstrap-grid";
 import styled from 'styled-components';
-import Heading from "../../components/Heading/Heading";
-import Paragraph from "../../components/Paragraph/Paragraph";
-import Carousel from "../../components/Carousel/Carousel";
+import Heading from "../../../components/Heading/Heading";
+import Paragraph from "../../../components/Paragraph/Paragraph";
+import Carousel from "../../../components/Carousel/Carousel";
 import CircularProgress, {CircularProgressProps} from '@material-ui/core/CircularProgress';
 
 const SlideBox = styled.li`

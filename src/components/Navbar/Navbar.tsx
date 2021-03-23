@@ -28,18 +28,18 @@ const Logo = styled.div`
 `;
 
 const Hamburger = styled.button`
-  display: none;
-
-  ${media.xs`
-    display: flex;
-    position: absolute;
-    top: 2rem;
-    right: 1rem;
-    transform: translateY(-50%);
-    border: none;
-    background: transparent;
-    color: ${props => props.theme.whiteColor};
+  ${media.lg`
+    display: none;
   `}
+  display: flex;
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: ${props => props.theme.whiteColor};
+
   .scrolled & {
     color: ${props => props.theme.mainColor};
   }
@@ -49,7 +49,9 @@ const Nav = styled.nav`
   ${media.xs`
     display: none;
   `}
-  
+  ${media.md`
+    display: none;
+  `}
   &.activeMenu {
     position: fixed;
     top: 0;
@@ -62,6 +64,10 @@ const Nav = styled.nav`
   }
 
   &.show {
+    ${media.md`
+    left: -1.5rem;
+  `}
+
     position: absolute;
     display: flex;
     align-items: center;
@@ -69,6 +75,7 @@ const Nav = styled.nav`
     left: 0;
     background-color: ${props => props.theme.blackColor};
     height: 100vh;
+    width: 100vw;
   }
 `;
 
@@ -76,6 +83,12 @@ const List = styled.ul`
   ${media.xs`
     height: auto;
     flex-wrap: wrap;
+  `}
+  ${media.md`
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
   `}
 
   height: 2rem;
@@ -91,6 +104,14 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   ${media.xs`
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    & + & {
+    margin-top: 1rem;
+    }
+  `}
+  ${media.md`
     width: 100%;
     padding: 0;
     text-align: center;

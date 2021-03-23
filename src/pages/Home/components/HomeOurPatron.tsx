@@ -1,10 +1,9 @@
 import {useEffect, useRef, useState} from "react";
-import {makeStyles} from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Confetti from 'react-canvas-confetti';
 import {Col, Container, Row} from "styled-bootstrap-grid";
-import Heading from "../../components/Heading/Heading";
-import Paragraph from "../../components/Paragraph/Paragraph";
+import Heading from "../../../components/Heading/Heading";
+import Paragraph from "../../../components/Paragraph/Paragraph";
 
 export function useOnScreen(ref) {
     const [isIntersecting, setIntersecting] = useState(false);

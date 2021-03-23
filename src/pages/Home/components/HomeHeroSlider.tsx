@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {Col, Container, Row} from "styled-bootstrap-grid";
-import Button from "../../components/Button/Button";
-import Carousel from "../../components/Carousel/Carousel";
+import Button from "../../../components/Button/Button";
+import Carousel from "../../../components/Carousel/Carousel";
 
 const sliderOptions = {
     type: 'carousel',
