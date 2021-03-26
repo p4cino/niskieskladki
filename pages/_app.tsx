@@ -1,6 +1,8 @@
 import {ThemeProvider, createGlobalStyle} from 'styled-components';
 import {GridThemeProvider, BaseCSS} from 'styled-bootstrap-grid';
-import {Normalize} from 'styled-normalize'
+import {Normalize} from 'styled-normalize';
+import { DefaultSeo } from 'next-seo';
+import SEO from '../next-seo.config';
 import Head from 'next/head';
 import Footer from "../src/components/Footer/Footer";
 
@@ -44,6 +46,7 @@ export default function App({Component: Component, pageProps}) {
                 gridTheme={gridTheme}
             >
                 <>
+                    <DefaultSeo {...SEO} />
                     <Head>
                         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
                         <link rel="preconnect" href="https://fonts.gstatic.com"/>

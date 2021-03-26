@@ -10,7 +10,7 @@ const sliderOptions = {
     perView: 1
 };
 
-const SlideBox = styled.div`
+const SlideBox = styled.li`
   width: 100vw;
   height: 100vh;
   position: relative;

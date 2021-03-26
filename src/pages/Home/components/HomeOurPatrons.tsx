@@ -1,6 +1,7 @@
 import {Col, Container, Row} from "styled-bootstrap-grid";
 import styled from 'styled-components';
 import Image from 'next/image';
+import Skeleton from '@material-ui/lab/Skeleton';
 import ReactPlayer from 'react-player/youtube'
 import Heading from "../../../components/Heading/Heading";
 import Paragraph from "../../../components/Paragraph/Paragraph";
@@ -43,11 +44,15 @@ const HomeOurPatrons = () => {
             <Row style={{height: '100%'}}>
                 <Col xl="12" lg="12" md="12" sm="12">
                     <div style={{display: 'flex', justifyContent: 'center', width: '100%', paddingBottom: '2rem'}}>
-                        <Heading color={"white"} underline={false}>Nasi Partnerzy</Heading>
+                        <Heading color={"white"} underline={false}>
+                            <span>Nasi</span>
+                            <span style={{padding: 5, marginLeft: 5, backgroundColor: '#cd0000'}}>Partnerzy</span>
+                        </Heading>
                     </div>
                     <div style={{paddingBottom: '4rem'}}>
                         <Paragraph color={"gray"} size={"small"} center={true}>
-                            Organizacje, które mają dla nas ogromne znaczenie. Razem z nimi chcecmy dzielić trudny i znoje w budowaniu prawdziwie wolnościwego świata
+                            Organizacje, które mają dla nas ogromne znaczenie. Razem z nimi chcecmy dzielić trudny i
+                            znoje w budowaniu prawdziwie wolnościwego świata
                         </Paragraph>
                     </div>
                 </Col>
@@ -56,22 +61,25 @@ const HomeOurPatrons = () => {
                         <SlideBox>
                             <Row alignItems="center">
                                 <Col xl="6" lg="6" md="12" sm="12" xs="12" xsOrder={1}>
-                                    <div>
+                                    <div style={{height: 350}}>
                                         <ReactPlayer
-                                            height={290}
+                                            height="350px"
                                             width="100%"
                                             url='https://www.youtube.com/watch?v=9_3YFNGttgI'
                                             controls={true}
+                                            onReady={() => console.log("kek")}
                                         />
                                     </div>
                                 </Col>
                                 <Col xl="6" lg="6" md="12" sm="12" xs="12" xsOrder={0}>
                                     <TextContainer>
                                         <div style={{display: 'flex', width: '100%'}}>
-                                            <Heading color={"white"} size={"small"} underline={false}>#Posiłekdlalekarza</Heading>
+                                            <Heading color={"white"} size={"small"}
+                                                     underline={false}>#Posiłekdlalekarza</Heading>
                                         </div>
                                         <div style={{display: 'flex', width: '100%', paddingBottom: '1rem'}}>
-                                            <Heading color={"white"} size={"smallest"} underline={false}>Współorganizator</Heading>
+                                            <Heading color={"white"} size={"smallest"}
+                                                     underline={false}>Współorganizator</Heading>
                                         </div>
                                         <Paragraph color={"white"} size={"small"}>
                                             Największą i najbardziej rozpoznawalną akcją dobroczynną jest zorganizowana
@@ -98,10 +106,12 @@ const HomeOurPatrons = () => {
                                 <Col xl="6" lg="6" md="12" sm="12" xs="12" xsOrder={0}>
                                     <TextContainer>
                                         <div style={{display: 'flex', width: '100%'}}>
-                                            <Heading color={"white"} size={"small"} underline={false}>#Posiłekdlalekarza</Heading>
+                                            <Heading color={"white"} size={"small"}
+                                                     underline={false}>#Posiłekdlalekarza</Heading>
                                         </div>
                                         <div style={{display: 'flex', width: '100%', paddingBottom: '1rem'}}>
-                                            <Heading color={"white"} size={"smallest"} underline={false}>Współorganizator</Heading>
+                                            <Heading color={"white"} size={"smallest"}
+                                                     underline={false}>Współorganizator</Heading>
                                         </div>
                                         <Paragraph color={"white"} size={"small"}>
                                             Największą i najbardziej rozpoznawalną akcją dobroczynną jest zorganizowana

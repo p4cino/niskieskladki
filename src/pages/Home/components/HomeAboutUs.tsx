@@ -8,9 +8,14 @@ const HomeAboutUs = () => {
             <Row style={{height: '100%'}}>
                 <Col xl="12" lg="12" md="12" sm="12">
                     <div style={{display: 'flex', justifyContent: 'center', width: '100%', paddingBottom: '2rem'}}>
-                        <Heading color="main" underline={false}>Kilka słów o nas</Heading>
+                        <Heading color="main" underline={false}>
+                            <span>Kilka słów</span>
+                            <span style={{padding: 5, marginLeft: 5, backgroundColor: '#cd0000', color: 'white'}}>
+                                o nas
+                            </span>
+                        </Heading>
                     </div>
-                    <Paragraph>
+                    <Paragraph center>
                         Głównym celem stowarzyszenia jest propagowanie idei liberalizmu gospodarczego,
                         decentralizacji władzy
                         publicznej oraz wolności osobistej człowieka. Stowarzyszenie wspiera i promuje

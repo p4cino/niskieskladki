@@ -12,6 +12,10 @@ const GlideBox = styled.section`
   max-width: 100vw;
 `;
 
+const GlideArea = styled.ul `
+    list-style: none;
+`;
+
 const Arrows = styled.div`
   position: absolute;
   width: 100%;
@@ -57,7 +61,7 @@ const Carousel = ({element = 'glide', options, children}) => {
     return (
         <GlideBox className={classNames(element)}>
             <div className="glide__track" data-glide-el="track">
-                <ul className="glide__slides"
+                <GlideArea className="glide__slides"
                     style={{display: 'flex', margin: '0 auto', padding: '0', cursor: 'pointer'}}>
                     {children.map((slide, index) => {
                         return cloneElement(slide, {
@@ -66,7 +70,7 @@ const Carousel = ({element = 'glide', options, children}) => {
                         })
                     })
                     }
-                </ul>
+                </GlideArea>
             </div>
             <Arrows className="glide__arrows" data-glide-el="controls">
                 <Arrow className="glide__arrow glide__arrow--left" data-glide-dir="<"><FiChevronLeft/><A11yText>{`Poprzedni slajd`}</A11yText></Arrow>

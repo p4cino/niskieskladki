@@ -5,6 +5,7 @@ import classNames from 'classnames';
 const HeadingStyle = styled.h2`
   display: flex;
   width: fit-content;
+  align-items: center;
   color: ${props => props.theme.headingColor};
   text-transform: uppercase;
   margin: 0;

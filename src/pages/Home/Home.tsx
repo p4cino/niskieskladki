@@ -33,22 +33,6 @@ const BackgroundSection = styled.div`
 const Home = () => {
     return (
         <>
-            <Head>
-                <title>Stowarzyszenie Niskie Składki - #LudzkieDziałanie nie jest nam obce</title>
-                <link rel="icon" href="/favicon.ico"/>
-                <meta
-                    name="description"
-                    content="Niskie Składki promują idee pluralizmu tolerancji ze względu na poglądy polityczne oraz prowadzą działalność na rzecz praw człowieka, swobód obywatelskich oraz wolności słowa i wyrażanych poglądów."
-                />
-                <meta
-                    name="keywords"
-                    content="#LudzkieDziałanie, Niskie Składki, Niskie, Składki, NS, Ludzkie,Działanie"
-                />
-                <meta property="og:title" content="Stowarzyszenie Niskie Składki"/>
-                <meta property="og:type" content="website"/>
-                {/*<meta property="og:url" content="https://www.imdb.com/title/tt0117500/" />*/}
-                {/*<meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" />*/}
-            </Head>
             <Navbar/>
             <section>
                 <HomeHeroSlider/>

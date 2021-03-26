@@ -109,7 +109,8 @@ const HomeOurCollections = () => {
                 <Col xl="12" lg="12" md="12" sm="12">
                     <div style={{display: 'flex', justifyContent: 'center', width: '100%', paddingBottom: '2rem'}}>
                         <Heading color="main" underline={false}>
-                            Nasze zbiórki
+                            <span>Nasze</span>
+                            <span style={{padding: 5, marginLeft: 5, backgroundColor: '#cd0000', color: 'white'}}>zbiórki</span>
                         </Heading>
                     </div>
                     <div style={{display: 'flex', justifyContent: 'center', width: '100%', paddingBottom: '3rem', textAlign: 'center'}}>
@@ -135,7 +136,7 @@ const HomeOurCollections = () => {
                                 </Heading>
                             </SlideHeading>
                             <TextContainer>
-                                <Paragraph color={"gray"} size={"small"}>
+                                <Paragraph color={"heading"} size={"small"}>
                                     Pani Katarzyna wraz z mężem panem Mariuszem wychowuję dwoje dzieci - Zuzię i
                                     Wiktorka.
                                     Rodzina od kilku lat jest w trudnej sytuacji. Zuzia jest chora, ma białaczkę.
@@ -166,7 +167,7 @@ const HomeOurCollections = () => {
                                 </Heading>
                             </SlideHeading>
                             <TextContainer>
-                                <Paragraph color={"gray"} size={"small"}>
+                                <Paragraph color={"heading"} size={"small"}>
                                     W maju 2019 roku postanowiliśmy w ramach Ludzkiego Działania wspomóc budowę
                                     placu zabaw dla Pogotowia Opiekuńczego w Lublinie. Zebraliśmy na ten cel 4 256
                                     zł. Realizacja inwestycji pomoże dzieciom przejść łagodniej przez traumatyczne
@@ -188,7 +189,7 @@ const HomeOurCollections = () => {
                                 </Heading>
                             </SlideHeading>
                             <TextContainer>
-                                <Paragraph color={"gray"} size={"small"}>
+                                <Paragraph color={"heading"} size={"small"}>
                                     Jedna z pierwszych odnotowanych zbiórek dotyczyła wsparcia członkini naszej
                                     grupy. Znalazła się ona w nieciekawej sytuacji finansowej, a dzięki pozostałym
                                     użytkownikom Niskich Składek mogła kontynuować swoją edukację, oraz chociaż na

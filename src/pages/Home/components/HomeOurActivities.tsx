@@ -43,7 +43,12 @@ const HomeOurActivities = () => {
             <Row style={{height: '100%'}}>
                 <Col xl="12" lg="12" md="12" sm="12">
                     <div style={{display: 'flex', justifyContent: 'center', width: '100%', paddingBottom: '2rem'}}>
-                        <Heading color={"white"}>Nasze Działania</Heading>
+                        <Heading color={"white"} underline={false}>
+                            <span>Nasze</span>
+                            <span style={{padding: 5, marginLeft: 5, backgroundColor: '#cd0000', color: 'white'}}>
+                                Działania
+                            </span>
+                        </Heading>
                     </div>
                     <div style={{paddingBottom: '4rem'}}>
                         <Paragraph color={"white"} size={"small"} center={true}>

@@ -2,6 +2,7 @@ import {Col, Container, Row} from "styled-bootstrap-grid";
 import styled from 'styled-components';
 import {FiFacebook, FiTwitter} from "react-icons/fi";
 import Paragraph from "../../components/Paragraph/Paragraph";
+import A11yText from "../A11yText/A11yText";
 
 const Icon = styled.h2`
   display: flex;
@@ -23,15 +24,17 @@ const Footer = () => {
                     </Col>
                     <Col xl="6" lg="6" md="6" sm="6" xs={'6'}>
                         <div style={{display: 'flex', justifyContent: 'flex-end'}}>
-                            <a href="https://twitter.com/NiskieSkladki" target="_blank" style={{marginRight: '1rem'}}>
+                            <a rel="noopener" href="https://twitter.com/NiskieSkladki" target="_blank" style={{marginRight: '1rem'}}>
                                 <Icon>
                                     <FiTwitter/>
                                 </Icon>
+                                <A11yText>Profil na twitterze</A11yText>
                             </a>
-                            <a href="https://www.facebook.com/niskieskladki" target="_blank">
+                            <a rel="noopener" href="https://www.facebook.com/niskieskladki" target="_blank">
                                 <Icon>
                                     <FiFacebook/>
                                 </Icon>
+                                <A11yText>Fanpage na Facebook</A11yText>
                             </a>
                         </div>
                     </Col>
