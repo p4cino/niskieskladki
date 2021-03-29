@@ -13,22 +13,12 @@ const SlideBox = styled.li`
   list-style: none;
 `;
 
-// const SlideImage = styled.div`
-//   background-size: cover;
-//   height: 8rem;
-//   width: 100%;
-//
-//   img {
-//     width: 100%;
-//   }
+// const SlideVideo = styled.div`
+//   padding: 1rem;
 // `;
-//
-const SlideVideo = styled.div`
-  padding: 1rem;
-`;
 
 const TextContainer = styled.div`
-  padding-top: 4rem;
+  padding-top: ${props => props.theme.space[3]};
 `;
 
 const sliderOptions = {

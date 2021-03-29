@@ -9,7 +9,7 @@ const Icon = styled.h2`
   justify-content: center;
   background-color: #333;
   padding: 0.5rem;
-  color: white;
+  color: ${props => props.theme.whiteColor};
 `;
 
 const Footer = () => {

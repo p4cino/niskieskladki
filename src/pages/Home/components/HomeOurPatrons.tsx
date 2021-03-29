@@ -14,22 +14,12 @@ const SlideBox = styled.li`
   list-style: none;
 `;
 
-// const SlideImage = styled.div`
-//   background-size: cover;
-//   height: 8rem;
-//   width: 100%;
-//
-//   img {
-//     width: 100%;
-//   }
+// const SlideVideo = styled.div`
+//   padding: 1rem;
 // `;
-//
-const SlideVideo = styled.div`
-  padding: 1rem;
-`;
 
 const TextContainer = styled.div`
-  padding-top: 4rem;
+  padding-top: ${props => props.theme.space[3]};
 `;
 
 const sliderOptions = {
@@ -74,23 +64,22 @@ const HomeOurPatrons = () => {
                                 <Col xl="6" lg="6" md="12" sm="12" xs="12" xsOrder={0}>
                                     <TextContainer>
                                         <div style={{display: 'flex', width: '100%'}}>
-                                            <Heading color={"white"} size={"small"}
-                                                     underline={false}>#Posiłekdlalekarza</Heading>
+                                            <Heading color={"white"} size={"small"} underline={false}>
+                                                Instytut Misesa
+                                            </Heading>
                                         </div>
                                         <div style={{display: 'flex', width: '100%', paddingBottom: '1rem'}}>
-                                            <Heading color={"white"} size={"smallest"}
-                                                     underline={false}>Współorganizator</Heading>
+                                            <Heading color={"white"} size={"smallest"} underline={false}>
+                                                Partner Strategiczny
+                                            </Heading>
                                         </div>
                                         <Paragraph color={"white"} size={"small"}>
-                                            Największą i najbardziej rozpoznawalną akcją dobroczynną jest zorganizowana
-                                            w 2020 roku, przez Stowarzyszenie Niskie Składki, Fundację Otwarty Dialog,
-                                            Spontaniczny Sztab Obywatelski, ze wsparciem Patryka Wachowca (FOR)
-                                            ogólnopolska akcja Posiłek Dla Lekarza. Akcja polegała na zwrocie
-                                            (refundacji) udokumentowanych kosztów zamówień posiłków dostarczanych przez
-                                            restauracje osobom zatrudnionym w służbie zdrowia, a także hospitalizowanym
-                                            w związku z zarażeniem koronawirusem i tym, które się nimi opiekowały w
-                                            placówkach służby zdrowia. Łącznie podczas zbiórki zebrano ponad pół miliona
-                                            złotych, a o akcji informowały największe portale oraz stacje telewizyjne.
+                                            Instytut Edukacji Ekonomicznej im. Ludwiga von Misesa– organizacja powstała
+                                            w 2003 roku, mająca na celu rozpropagowanie myśli Austriackiej Szkoły
+                                            Ekonomii, czyli poglądów określanych jako „klasyczny liberalizm” oraz
+                                            libertariańskiej myśli politycznej. Zajmują się głównie działalnością
+                                            naukowo-badawczą. Kształtują młode pokolenia ekonomistów, odwołując się do
+                                            najlepszych myślicieli ASE.
                                         </Paragraph>
                                     </TextContainer>
                                 </Col>
@@ -106,23 +95,23 @@ const HomeOurPatrons = () => {
                                 <Col xl="6" lg="6" md="12" sm="12" xs="12" xsOrder={0}>
                                     <TextContainer>
                                         <div style={{display: 'flex', width: '100%'}}>
-                                            <Heading color={"white"} size={"small"}
-                                                     underline={false}>#Posiłekdlalekarza</Heading>
+                                            <Heading color={"white"} size={"small"} underline={false}>
+                                                Fundacja Wolności i Przedsiębiorczości
+                                            </Heading>
                                         </div>
                                         <div style={{display: 'flex', width: '100%', paddingBottom: '1rem'}}>
-                                            <Heading color={"white"} size={"smallest"}
-                                                     underline={false}>Współorganizator</Heading>
+                                            <Heading color={"white"} size={"smallest"} underline={false}>
+                                                Partner strategiczny
+                                            </Heading>
                                         </div>
                                         <Paragraph color={"white"} size={"small"}>
-                                            Największą i najbardziej rozpoznawalną akcją dobroczynną jest zorganizowana
-                                            w 2020 roku, przez Stowarzyszenie Niskie Składki, Fundację Otwarty Dialog,
-                                            Spontaniczny Sztab Obywatelski, ze wsparciem Patryka Wachowca (FOR)
-                                            ogólnopolska akcja Posiłek Dla Lekarza. Akcja polegała na zwrocie
-                                            (refundacji) udokumentowanych kosztów zamówień posiłków dostarczanych przez
-                                            restauracje osobom zatrudnionym w służbie zdrowia, a także hospitalizowanym
-                                            w związku z zarażeniem koronawirusem i tym, które się nimi opiekowały w
-                                            placówkach służby zdrowia. Łącznie podczas zbiórki zebrano ponad pół miliona
-                                            złotych, a o akcji informowały największe portale oraz stacje telewizyjne.
+                                            Fundacja Wolności i Przedsiębiorczości – powstała w 2012 roku organizacja i
+                                            skupia się na edukacji społeczeństwa poprzez promowanie wolnościowych
+                                            rozwiązań wśród polskiego społeczeństwa. Starają się poprzez swoje działania
+                                            dotrzeć do przedsiębiorców, by przedstawić wolnościowe działania, które mogą
+                                            wspomóc rozwój przedsiębiorstw. Do głównych inicjatyw i projektów fundacji
+                                            należą – przypominanie o Krakowskiej Szkole Ekonomii, Polsko-Amerykańska
+                                            Szkoła Liderów oraz Project Arizona.
                                         </Paragraph>
                                     </TextContainer>
                                 </Col>

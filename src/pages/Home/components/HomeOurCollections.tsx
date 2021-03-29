@@ -28,7 +28,7 @@ const SlideImage = styled.div`
 `;
 
 const SlideHeading = styled.div`
-  padding: 1rem;
+  padding: ${props => props.theme.space[0]};
 `;
 
 const TextContainer = styled.div`
@@ -50,7 +50,7 @@ const CircularCollected = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  padding-left: 1rem;
+  padding-left: ${props => props.theme.space[0]};
 `;
 
 const ProgressContainer = styled.div`

@@ -37,7 +37,7 @@ const SliderHeading = styled.h2`
   font-weight: normal;
   text-align: left;
   letter-spacing: 1px;
-  margin-bottom: 2rem;
+  margin-bottom: ${props => props.theme.space[1]};
 `;
 
 const SliderDescription = styled.p`
@@ -47,15 +47,18 @@ const SliderDescription = styled.p`
   font-weight: normal;
   text-align: left;
   letter-spacing: 3px;
-  margin-bottom: 3rem;
+  margin-bottom: ${props => props.theme.space[2]};
 `;
 
 const SliderButtonWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
 `;
 
 const SliderButtonItem = styled.div`
   margin: 0 1rem;
+  padding: 1rem;
 
   &:first-child {
     margin-left: 0;
@@ -68,7 +71,7 @@ const HomeHeroSlider = () => {
             element="heroSlider"
             options={sliderOptions}
         >
-            <SlideBox style={{backgroundImage: 'url(/images/img1.jpg)'}}>
+            <SlideBox style={{backgroundImage: 'url(/images/welcome/hands.jpg)'}}>
                 <Container style={{height: '100%'}}>
                     <Row style={{height: '100%'}}>
                         <Col xl="12" lg="12" md="12" sm="12" alignSelf={"center"}>
@@ -85,17 +88,14 @@ const HomeHeroSlider = () => {
                             </SliderDescription>
                             <SliderButtonWrapper>
                                 <SliderButtonItem>
-                                    <Button>Współpraca</Button>
+                                    <Button>Dołącz do nas</Button>
                                 </SliderButtonItem>
-                                <SliderButtonWrapper>
-                                    <Button>Nasze zbiórki</Button>
-                                </SliderButtonWrapper>
                             </SliderButtonWrapper>
                         </Col>
                     </Row>
                 </Container>
             </SlideBox>
-            <SlideBox style={{backgroundImage: 'url(/images/img2.jpg)'}}>
+            <SlideBox style={{backgroundImage: 'url(/images/welcome/hands2.jpg)'}}>
                 <Container style={{height: '100%'}}>
                     <Row style={{height: '100%'}}>
                         <Col xl="12" lg="12" md="12" sm="12" alignSelf={"center"}>

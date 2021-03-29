@@ -7,20 +7,28 @@ import A11yText from "../A11yText/A11yText";
 
 const GlideBox = styled.section`
   position: relative;
-  overflow-x: hidden;
+  //overflow: hidden;
   user-select: none;
   max-width: 100vw;
 `;
 
+const GlideTrack = styled.div`
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 4rem;
+`;
+
 const Arrows = styled.div`
   position: absolute;
+  display: flex;
+  justify-content: center;
   width: 100%;
-  top: 0;
-  transform: translateY(-50%);
+  bottom: -3rem;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
 `;
 
 const Arrow = styled.button`
-  position: absolute;
   border: none;
   cursor: pointer;
   display: flex;
@@ -29,21 +37,17 @@ const Arrow = styled.button`
   justify-content: center;
   margin: 0;
   padding: 0;
-  background-color: ${props => props.theme.blackColor};
-  color: ${props => props.theme.whiteColor};
-  width: 2rem;
-  height: 2rem;
-  
-  &.glide__arrow--left {
-    left: calc(50% + 1rem);
-  }
-  
+  background-color: ${props => props.theme.grayColor};
+  color: white;
+  width: 3rem;
+  height: 3rem;
+
   &.glide__arrow--right {
-    left: calc(50% + 4rem);
+    margin-left: 2rem;
   }
 `;
 
-const ArticleCarousel = ({element = 'glide', options, children}) => {
+const LidersCarousel = ({element = 'glide', options, children}) => {
     const [slider] = useState(new Glide(`.${element}`, options))
     useEffect(() => {
         slider.mount();
@@ -56,7 +60,7 @@ const ArticleCarousel = ({element = 'glide', options, children}) => {
 
     return (
         <GlideBox className={classNames(element)}>
-            <div className="glide__track" data-glide-el="track">
+            <GlideTrack className="glide__track" data-glide-el="track">
                 <ul className="glide__slides"
                     style={{display: 'flex', margin: '0 auto', padding: '0', cursor: 'pointer'}}>
                     {children.map((slide, index) => {
@@ -67,13 +71,15 @@ const ArticleCarousel = ({element = 'glide', options, children}) => {
                     })
                     }
                 </ul>
-            </div>
+            </GlideTrack>
             <Arrows className="glide__arrows" data-glide-el="controls">
-                <Arrow className="glide__arrow glide__arrow--left" data-glide-dir="<"><FiChevronLeft/><A11yText>{`Poprzedni slajd`}</A11yText></Arrow>
-                <Arrow className="glide__arrow glide__arrow--right" data-glide-dir=">"><FiChevronRight/><A11yText>{`Poprzedni slajd`}</A11yText></Arrow>
+                <Arrow className="glide__arrow glide__arrow--left"
+                       data-glide-dir="<"><FiChevronLeft/><A11yText>{`Poprzedni slajd`}</A11yText></Arrow>
+                <Arrow className="glide__arrow glide__arrow--right"
+                       data-glide-dir=">"><FiChevronRight/><A11yText>{`Poprzedni slajd`}</A11yText></Arrow>
             </Arrows>
         </GlideBox>
     )
 }
 
-export default ArticleCarousel;
+export default LidersCarousel;

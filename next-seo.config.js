@@ -14,4 +14,23 @@ export default {
         site: '@site',
         cardType: 'summary_large_image',
     },
+    additionalMetaTags: [
+        {
+            name: 'theme-color',
+            content: '#0b4987'
+        },
+        {
+            name: 'msapplication-navbutton-color',
+            content: '#0b4987'
+        },
+        {
+            name: 'apple-mobile-web-app-capable',
+            content: 'yes'
+        },
+        {
+            name: 'apple-mobile-web-app-status-bar-style',
+            content: 'blue'
+        },
+    ],
+
 };

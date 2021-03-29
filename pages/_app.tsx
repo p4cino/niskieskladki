@@ -27,6 +27,8 @@ const styledTheme = {
     space: [
         '1rem',
         '2rem',
+        '3rem',
+        '4rem',
     ],
 }
 
