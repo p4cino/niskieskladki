@@ -1,5 +1,6 @@
 import {Col, Container, Row} from "styled-bootstrap-grid";
 import styled from 'styled-components';
+import Image from 'next/image';
 import Heading from "../../../components/Heading/Heading";
 import Paragraph from "../../../components/Paragraph/Paragraph";
 import Carousel from "../../../components/Carousel/Carousel";
@@ -127,8 +128,7 @@ const HomeOurCollections = () => {
                     >
                         <SlideBox>
                             <SlideImage>
-                                <img src="https://niskieskladki.pl/assets/img-temp/800x496/zbiorka4.png" alt=""
-                                     loading="lazy"/>
+                                <Image src={"/images/collections/ns-dla-malej-zuzi.png"} width={359} height={125}/>
                             </SlideImage>
                             <SlideHeading>
                                 <Heading size={"small"} underline={false}>
@@ -158,8 +158,7 @@ const HomeOurCollections = () => {
                         </SlideBox>
                         <SlideBox>
                             <SlideImage>
-                                <img src="https://niskieskladki.pl/assets/img-temp/800x496/zbiorka1.png" alt=""
-                                     loading="lazy"/>
+                                <Image src={"/images/collections/dzien-dziecka-z-grupa-niskie-skladki.png"} width={359} height={125}/>
                             </SlideImage>
                             <SlideHeading>
                                 <Heading size={"small"} underline={false}>
@@ -180,8 +179,7 @@ const HomeOurCollections = () => {
                         </SlideBox>
                         <SlideBox>
                             <SlideImage>
-                                <img src="https://niskieskladki.pl/assets/img-temp/800x496/zbiorka3.png" alt=""
-                                     loading="lazy"/>
+                                <Image src={"/images/collections/fundusz-stypendialny.png"} width={359} height={125}/>
                             </SlideImage>
                             <SlideHeading>
                                 <Heading size={"small"} underline={false}>
