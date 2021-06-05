@@ -23,7 +23,7 @@ const Footer = () => {
                                 href="https://www.linkedin.com/in/🚀wojciech-puzio-311422137/"
                                 target="_blank"
                             >
-                                ❤️
+                                🚀
                             </a>
                         </Paragraph>
                     </Col>
