@@ -1,8 +1,9 @@
-import { useState, useEffect, cloneElement } from 'react';
 import Glide from '@glidejs/glide';
-import styled from 'styled-components';
 import classNames from 'classnames';
+import { cloneElement, useEffect, useState } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import styled from 'styled-components';
+
 import A11yText from '../A11yText/A11yText';
 
 const Carousel = ({ element = 'glide', options, children }) => {

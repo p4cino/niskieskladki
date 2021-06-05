@@ -1,8 +1,9 @@
-import { useState, useEffect, cloneElement } from 'react';
 import Glide from '@glidejs/glide';
-import styled from 'styled-components';
 import classNames from 'classnames';
+import { cloneElement, useEffect, useState } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import styled from 'styled-components';
+
 import A11yText from '../A11yText/A11yText';
 
 const LidersCarousel = ({ element = 'glide', options, children }) => {
@@ -88,7 +89,7 @@ const Arrow = styled.button`
     justify-content: center;
     margin: 0;
     padding: 0;
-    background-color: ${props => props.theme.grayColor};
+    background-color: ${properties => properties.theme.grayColor};
     color: white;
     width: 3rem;
     height: 3rem;

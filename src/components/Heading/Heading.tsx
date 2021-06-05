@@ -1,43 +1,43 @@
+import classNames from 'classnames';
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import classNames from 'classnames';
 
 const HeadingStyle = styled.h2`
     display: flex;
     width: fit-content;
     align-items: center;
-    color: ${props => props.theme.headingColor};
+    color: ${properties => properties.theme.headingColor};
     text-transform: uppercase;
     margin: 0;
     padding: 0;
     font-size: 1.5rem;
 
     &.black {
-        color: ${props => props.theme.blackColor};
+        color: ${properties => properties.theme.blackColor};
     }
 
     &.gray {
-        color: ${props => props.theme.grayColor};
+        color: ${properties => properties.theme.grayColor};
     }
 
     &.red {
-        color: ${props => props.theme.redColor};
+        color: ${properties => properties.theme.redColor};
     }
 
     &.main {
-        color: ${props => props.theme.mainColor};
+        color: ${properties => properties.theme.mainColor};
     }
 
     &.text {
-        color: ${props => props.theme.textColor};
+        color: ${properties => properties.theme.textColor};
     }
 
     &.heading {
-        color: ${props => props.theme.headingColor};
+        color: ${properties => properties.theme.headingColor};
     }
 
     &.white {
-        color: ${props => props.theme.whiteColor};
+        color: ${properties => properties.theme.whiteColor};
     }
 
     &.large {
@@ -54,7 +54,7 @@ const HeadingStyle = styled.h2`
     }
 
     &.underline {
-        text-decoration: underline ${props => props.theme.mainColor};
+        text-decoration: underline ${properties => properties.theme.mainColor};
         text-underline-position: under;
     }
 `;
@@ -63,7 +63,7 @@ type Color = 'black' | 'gray' | 'red' | 'main' | 'text' | 'heading' | 'white';
 type Size = 'smallest' | 'small' | 'normal' | 'medium' | 'large';
 type Type = 'h1' | 'h2' | 'h3';
 
-type Props = {
+type Properties = {
     size?: Size;
     color?: Color;
     children: any;
@@ -71,19 +71,19 @@ type Props = {
     type?: Type;
 };
 
-const Heading: FunctionComponent<Props> = ({
+const Heading: FunctionComponent<Properties> = ({
     size,
     color,
     underline = true,
     type,
     children,
-    ...props
+    ...properties
 }) => {
     return (
         <HeadingStyle
             as={type}
             className={classNames(size, { underline: underline }, color)}
-            {...props}
+            {...properties}
         >
             {children}
         </HeadingStyle>

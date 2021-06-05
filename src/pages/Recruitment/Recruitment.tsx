@@ -1,5 +1,14 @@
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import Navbar from '../../components/Navbar/Navbar';
+
+const Recruitment = () => {
+    return (
+        <>
+            <Navbar />
+            Test
+        </>
+    );
+};
 
 // const BackgroundSection = styled.div`
 //   background-size: cover;
@@ -21,14 +30,5 @@ import Navbar from '../../components/Navbar/Navbar';
 //     background: rgba(0, 0, 0, 0.7);
 //   }
 // `;
-
-const Recruitment = () => {
-    return (
-        <>
-            <Navbar />
-            Test
-        </>
-    );
-};
 
 export default Recruitment;

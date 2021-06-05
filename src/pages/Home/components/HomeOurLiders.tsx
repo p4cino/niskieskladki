@@ -1,10 +1,10 @@
 import { Col, Container, Row } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
-// import Image from 'next/image';
-import Heading from '../../../components/Heading/Heading';
-import Paragraph from '../../../components/Paragraph/Paragraph';
-import LidersCarousel from '../../../components/LidersCarousel/LidersCarousel';
+
 import Button from '../../../components/Button/Button';
+import Heading from '../../../components/Heading/Heading';
+import LidersCarousel from '../../../components/LidersCarousel/LidersCarousel';
+import Paragraph from '../../../components/Paragraph/Paragraph';
 
 const sliderOptions = {
     type: 'carousel',
@@ -76,8 +76,8 @@ const HomeOurLiders = () => {
                                 </div>
                                 <Paragraph color={'white'} size={'small'}>
                                     Jedna z lokomotyw stowarzyszenia. Znany w
-                                    środowisku wolnościowym jako "nawrócony
-                                    lewak".
+                                    środowisku wolnościowym jako &apos;nawrócony
+                                    lewak&apos;.
                                 </Paragraph>
                             </TextContainer>
                             <Button>Zobacz Profil</Button>
@@ -215,7 +215,7 @@ const SlideBox = styled.li`
     list-style: none;
     background-size: cover;
     padding: 3rem;
-    background-color: ${props => props.theme.blackColor};
+    background-color: ${properties => properties.theme.blackColor};
 `;
 
 // const SlideVideo = styled.div`
@@ -224,7 +224,7 @@ const SlideBox = styled.li`
 
 const TextContainer = styled.div`
     max-width: 210px;
-    padding-bottom: ${props => props.theme.space[2]};
+    padding-bottom: ${properties => properties.theme.space[2]};
 `;
 
 export default HomeOurLiders;

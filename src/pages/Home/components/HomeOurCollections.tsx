@@ -1,18 +1,19 @@
-import { Col, Container, Row } from 'styled-bootstrap-grid';
-import styled from 'styled-components';
-import Image from 'next/image';
-import Heading from '../../../components/Heading/Heading';
-import Paragraph from '../../../components/Paragraph/Paragraph';
-import Carousel from '../../../components/Carousel/Carousel';
 import CircularProgress, {
     CircularProgressProps
 } from '@material-ui/core/CircularProgress';
+import Image from 'next/image';
+import { Col, Container, Row } from 'styled-bootstrap-grid';
+import styled from 'styled-components';
+
+import Carousel from '../../../components/Carousel/Carousel';
+import Heading from '../../../components/Heading/Heading';
+import Paragraph from '../../../components/Paragraph/Paragraph';
 
 function CircularProgressWithLabel(
-    props: CircularProgressProps & { value: number }
+    properties: CircularProgressProps & { value: number }
 ) {
-    if (props.value > 100) {
-        props.value = 100;
+    if (properties.value > 100) {
+        properties.value = 100;
     }
 
     return (
@@ -21,9 +22,11 @@ function CircularProgressWithLabel(
                 <CircularProgress
                     variant="determinate"
                     color={'secondary'}
-                    {...props}
+                    {...properties}
                 />
-                <ProgressLabel>{`${Math.round(props.value)}%`}</ProgressLabel>
+                <ProgressLabel>{`${Math.round(
+                    properties.value
+                )}%`}</ProgressLabel>
             </ProgressContainer>
             <CircularCollected>
                 1234zł
@@ -209,7 +212,7 @@ const SlideBox = styled.li`
     align-content: space-between;
     width: 100%;
     position: relative;
-    background-color: ${props => props.theme.whiteColor};
+    background-color: ${properties => properties.theme.whiteColor};
     list-style: none;
     min-height: 200px;
 `;
@@ -225,7 +228,7 @@ const SlideImage = styled.div`
 `;
 
 const SlideHeading = styled.div`
-    padding: ${props => props.theme.space[0]};
+    padding: ${properties => properties.theme.space[0]};
 `;
 
 const TextContainer = styled.div`
@@ -247,7 +250,7 @@ const CircularCollected = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    padding-left: ${props => props.theme.space[0]};
+    padding-left: ${properties => properties.theme.space[0]};
 `;
 
 const ProgressContainer = styled.div`

@@ -1,11 +1,12 @@
-import { Col, Container, Row } from 'styled-bootstrap-grid';
-import styled from 'styled-components';
 // import Image from 'next/image';
 // import Skeleton from '@material-ui/lab/Skeleton';
 import ReactPlayer from 'react-player/youtube';
+import { Col, Container, Row } from 'styled-bootstrap-grid';
+import styled from 'styled-components';
+
+import ArticleCarousel from '../../../components/ArticleCarousel/ArticleCarousel';
 import Heading from '../../../components/Heading/Heading';
 import Paragraph from '../../../components/Paragraph/Paragraph';
-import ArticleCarousel from '../../../components/ArticleCarousel/ArticleCarousel';
 
 const sliderOptions = {
     type: 'carousel',
@@ -68,7 +69,7 @@ const HomeOurPatrons = () => {
                                             width="100%"
                                             url="https://www.youtube.com/watch?v=9_3YFNGttgI"
                                             controls={true}
-                                            onReady={() => console.log('kek')}
+                                            // onReady={() => console.log('kek')}
                                         />
                                     </div>
                                 </Col>
@@ -231,7 +232,7 @@ const SlideBox = styled.li`
 // `;
 
 const TextContainer = styled.div`
-    padding-top: ${props => props.theme.space[3]};
+    padding-top: ${properties => properties.theme.space[3]};
 `;
 
 export default HomeOurPatrons;

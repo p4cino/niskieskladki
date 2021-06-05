@@ -1,27 +1,27 @@
-import styled from 'styled-components';
 import classNames from 'classnames';
 import { FunctionComponent } from 'react';
+import styled from 'styled-components';
 
 type Color = 'black' | 'gray' | 'red' | 'main' | 'text' | 'heading' | 'white';
 type Size = 'smallest' | 'small' | 'big';
 
-type Props = {
+type Properties = {
     color?: Color;
     size?: Size;
     center?: boolean;
 };
 
-const Paragraph: FunctionComponent<Props> = ({
+const Paragraph: FunctionComponent<Properties> = ({
     color = 'text',
     size,
     center,
     children,
-    ...props
+    ...properties
 }) => {
     return (
         <ParagraphStyle
             className={classNames(color, size, { center: center })}
-            {...props}
+            {...properties}
         >
             {children}
         </ParagraphStyle>
@@ -29,38 +29,38 @@ const Paragraph: FunctionComponent<Props> = ({
 };
 
 const ParagraphStyle = styled.p`
-    color: ${props => props.theme.textColor};
+    color: ${properties => properties.theme.textColor};
     line-height: 1.6rem;
     margin: 0;
     padding: 0;
     font-size: 1rem;
 
     &.black {
-        color: ${props => props.theme.blackColor};
+        color: ${properties => properties.theme.blackColor};
     }
 
     &.gray {
-        color: ${props => props.theme.grayColor};
+        color: ${properties => properties.theme.grayColor};
     }
 
     &.red {
-        color: ${props => props.theme.redColor};
+        color: ${properties => properties.theme.redColor};
     }
 
     &.main {
-        color: ${props => props.theme.mainColor};
+        color: ${properties => properties.theme.mainColor};
     }
 
     &.text {
-        color: ${props => props.theme.textColor};
+        color: ${properties => properties.theme.textColor};
     }
 
     &.heading {
-        color: ${props => props.theme.headingColor};
+        color: ${properties => properties.theme.headingColor};
     }
 
     &.white {
-        color: ${props => props.theme.whiteColor};
+        color: ${properties => properties.theme.whiteColor};
     }
 
     &.small {

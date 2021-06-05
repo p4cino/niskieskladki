@@ -1,17 +1,15 @@
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
 
-type Props = {
-    tag?: 'p' | 'span';
-};
+type Properties = { tag?: 'p' | 'span' };
 
-const A11yText: FunctionComponent<Props> = ({
+const A11yText: FunctionComponent<Properties> = ({
     tag = 'span',
     children,
-    ...props
+    ...properties
 }) => {
     return (
-        <A11Style as={tag} {...props}>
+        <A11Style as={tag} {...properties}>
             {children}
         </A11Style>
     );

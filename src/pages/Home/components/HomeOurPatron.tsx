@@ -1,11 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import { useEffect, useRef, useState } from 'react';
 import Confetti from 'react-canvas-confetti';
 import { Col, Container, Row } from 'styled-bootstrap-grid';
+
 import Heading from '../../../components/Heading/Heading';
 import Paragraph from '../../../components/Paragraph/Paragraph';
 
-export function useOnScreen(ref) {
+export function useOnScreen(reference) {
     const [isIntersecting, setIntersecting] = useState(false);
 
     useEffect(() => {
@@ -13,7 +14,7 @@ export function useOnScreen(ref) {
             setIntersecting(entry.isIntersecting)
         );
 
-        observer.observe(ref.current);
+        observer.observe(reference.current);
         return () => {
             observer.disconnect();
         };
@@ -26,12 +27,12 @@ const HomeOurPatron = () => {
     const [progress, setProgress] = useState(0);
     const [buffer, setBuffer] = useState(10);
     const [fire, setFire] = useState(false);
-    const ref = useRef();
-    const isVisible = useOnScreen(ref);
-    const progressRef = useRef(() => {});
+    const reference = useRef();
+    const isVisible = useOnScreen(reference);
+    const progressReference = useRef(() => {});
 
     useEffect(() => {
-        progressRef.current = () => {
+        progressReference.current = () => {
             if (progress >= 100) {
                 setProgress(100);
                 setBuffer(100);
@@ -52,7 +53,7 @@ const HomeOurPatron = () => {
 
     useEffect(() => {
         const timer = setInterval(() => {
-            progressRef.current();
+            progressReference.current();
         }, 500);
 
         return () => {
@@ -222,7 +223,7 @@ const HomeOurPatron = () => {
                             </Heading>
                         </div>
                         <LinearProgress
-                            ref={ref}
+                            ref={reference}
                             color="secondary"
                             variant="buffer"
                             value={progress}

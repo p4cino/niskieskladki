@@ -1,9 +1,12 @@
 module.exports = {
     parserOptions: {
+        parser: "@typescript-eslint/parser",
         ecmaVersion: 2020,
         sourceType: 'module',
         ecmaFeatures: {
-            jsx: true
+            experimentalObjectRestSpread: true,
+            jsx: true,
+            tsx: true
         }
     },
     env: {
@@ -25,13 +28,24 @@ module.exports = {
         'plugin:sonarjs/recommended',
         'plugin:unicorn/recommended',
         'plugin:security/recommended',
-        'plugin:react-hooks/recommended'
+        'plugin:react-hooks/recommended',
+        'plugin:react-hooks/recommended',
+        'plugin:@typescript-eslint/recommended'
+    ],
+    ignorePatterns: [
+        '_document.tsx'
     ],
     rules: {
         'no-console': 'error',
+        'no-unused-vars': 'warn',
         'react/react-in-jsx-scope': 'off',
         'react/prop-types': 'off',
-        'simple-import-sort/sort': 'error',
-        'unicorn/filename-case': 'off'
+        'simple-import-sort/imports': 'error',
+        'unicorn/filename-case': 'off',
+        'unicorn/no-null': 'warn',
+        'react-hooks/exhaustive-deps': 'off',
+        '@typescript-eslint/no-empty-function': 'warn',
+        '@typescript-eslint/ban-ts-comment': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
     }
 };

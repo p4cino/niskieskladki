@@ -1,6 +1,7 @@
+import { FiFacebook, FiTwitter } from 'react-icons/fi';
 import { Col, Container, Row } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
-import { FiFacebook, FiTwitter } from 'react-icons/fi';
+
 import Paragraph from '../../components/Paragraph/Paragraph';
 import A11yText from '../A11yText/A11yText';
 
@@ -22,8 +23,11 @@ const Footer = () => {
                                 style={{ textDecoration: 'none' }}
                                 href="https://www.linkedin.com/in/🚀wojciech-puzio-311422137/"
                                 target="_blank"
+                                rel="noreferrer"
                             >
-                                🚀
+                                <span role="img" aria-label="Rocket">
+                                    🚀
+                                </span>
                             </a>
                         </Paragraph>
                     </Col>
@@ -35,7 +39,7 @@ const Footer = () => {
                             }}
                         >
                             <a
-                                rel="noopener"
+                                rel="noopener noreferrer"
                                 href="https://twitter.com/NiskieSkladki"
                                 target="_blank"
                                 style={{ marginRight: '1rem' }}
@@ -46,7 +50,7 @@ const Footer = () => {
                                 <A11yText>Profil na twitterze</A11yText>
                             </a>
                             <a
-                                rel="noopener"
+                                rel="noopener noreferrer"
                                 href="https://www.facebook.com/niskieskladki"
                                 target="_blank"
                             >
@@ -68,7 +72,7 @@ const Icon = styled.h2`
     justify-content: center;
     background-color: #333;
     padding: 0.5rem;
-    color: ${props => props.theme.whiteColor};
+    color: ${properties => properties.theme.whiteColor};
 `;
 
 export default Footer;

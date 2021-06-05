@@ -1,8 +1,9 @@
-import { useState, useEffect, cloneElement } from 'react';
 import Glide from '@glidejs/glide';
-import styled from 'styled-components';
 import classNames from 'classnames';
+import { cloneElement, useEffect, useState } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import styled from 'styled-components';
+
 import A11yText from '../A11yText/A11yText';
 
 const ArticleCarousel = ({ element = 'glide', options, children }) => {
@@ -80,8 +81,8 @@ const Arrow = styled.button`
     justify-content: center;
     margin: 0;
     padding: 0;
-    background-color: ${props => props.theme.blackColor};
-    color: ${props => props.theme.whiteColor};
+    background-color: ${properties => properties.theme.blackColor};
+    color: ${properties => properties.theme.whiteColor};
     width: 2rem;
     height: 2rem;
 

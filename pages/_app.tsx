@@ -1,9 +1,10 @@
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
-import { GridThemeProvider, BaseCSS } from 'styled-bootstrap-grid';
-import { Normalize } from 'styled-normalize';
-import { DefaultSeo } from 'next-seo';
-import SEO from '../next-seo.config';
 import Head from 'next/head';
+import { DefaultSeo } from 'next-seo';
+import { BaseCSS, GridThemeProvider } from 'styled-bootstrap-grid';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { Normalize } from 'styled-normalize';
+
+import SEO from '../next-seo.config';
 import Footer from '../src/components/Footer/Footer';
 
 const gridTheme = {

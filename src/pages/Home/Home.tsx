@@ -1,12 +1,13 @@
 import styled from 'styled-components';
+
 import Navbar from '../../components/Navbar/Navbar';
-import HomeHeroSlider from './components/HomeHeroSlider';
 import HomeAboutUs from './components/HomeAboutUs';
-import HomeOurCollections from './components/HomeOurCollections';
+import HomeHeroSlider from './components/HomeHeroSlider';
 import HomeOurActivities from './components/HomeOurActivities';
+import HomeOurCollections from './components/HomeOurCollections';
+import HomeOurLiders from './components/HomeOurLiders';
 import HomeOurPatron from './components/HomeOurPatron';
 import HomeOurPatrons from './components/HomeOurPatrons';
-import HomeOurLiders from './components/HomeOurLiders';
 
 const Home = () => {
     return (

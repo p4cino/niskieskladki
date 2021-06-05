@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { GoThreeBars, GoX } from 'react-icons/go';
-import { media } from 'styled-bootstrap-grid';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { GoThreeBars, GoX } from 'react-icons/go';
+import { media } from 'styled-bootstrap-grid';
+import { Col, Container, Row } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
-import { Container, Row, Col } from 'styled-bootstrap-grid';
 
 const Navbar = () => {
     let listener = null;
@@ -14,18 +14,14 @@ const Navbar = () => {
 
     useEffect(() => {
         listener = document.addEventListener('scroll', listener => {
-            let scrolled = document.scrollingElement.scrollTop;
+            const scrolled = document.scrollingElement.scrollTop;
             if (scrolled >= 70) {
                 setScrollState(true);
             } else {
                 setScrollState(false);
             }
         });
-        if (showMenu) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
+        document.body.style.overflow = showMenu ? 'hidden' : 'unset';
         return () => {
             document.removeEventListener('scroll', listener);
         };
@@ -149,10 +145,10 @@ const Hamburger = styled.button`
     transform: translateY(-50%);
     border: none;
     background: transparent;
-    color: ${props => props.theme.whiteColor};
+    color: ${properties => properties.theme.whiteColor};
 
     .scrolled & {
-        color: ${props => props.theme.mainColor};
+        color: ${properties => properties.theme.mainColor};
     }
 `;
 
@@ -184,7 +180,7 @@ const Nav = styled.nav`
         align-items: center;
         top: -3rem;
         left: 0;
-        background-color: ${props => props.theme.blackColor};
+        background-color: ${properties => properties.theme.blackColor};
         height: 100vh;
         width: 100vw;
     }
@@ -231,7 +227,7 @@ const ListItem = styled.li`
     }
   `}
 
-  padding: 0 ${props => props.theme.space[0]};
+  padding: 0 ${properties => properties.theme.space[0]};
     letter-spacing: 0.5px;
 
     &:first-child {
@@ -245,10 +241,10 @@ const ListItem = styled.li`
 
 const ListItemLink = styled.a`
     text-decoration: none;
-    color: ${props => props.theme.whiteColor};
+    color: ${properties => properties.theme.whiteColor};
 
     .scrolled & {
-        color: ${props => props.theme.grayColor};
+        color: ${properties => properties.theme.grayColor};
 
         &.active {
             color: red;
@@ -262,7 +258,7 @@ const ListItemLink = styled.a`
     }
 
     &.blue {
-        color: ${props => props.theme.mainColor};
+        color: ${properties => properties.theme.mainColor};
         font-weight: bold;
     }
 `;
