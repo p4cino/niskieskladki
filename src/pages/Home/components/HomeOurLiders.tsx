@@ -1,29 +1,10 @@
 import {Col, Container, Row} from "styled-bootstrap-grid";
 import styled from 'styled-components';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Heading from "../../../components/Heading/Heading";
 import Paragraph from "../../../components/Paragraph/Paragraph";
 import LidersCarousel from "../../../components/LidersCarousel/LidersCarousel";
 import Button from "../../../components/Button/Button";
-
-const SlideBox = styled.li`
-  width: 100%;
-  //min-height: 300px;
-  position: relative;
-  list-style: none;
-  background-size: cover;
-  padding: 3rem;
-  background-color: ${props => props.theme.blackColor};
-`;
-
-// const SlideVideo = styled.div`
-//   padding: 1rem;
-// `;
-
-const TextContainer = styled.div`
-  max-width: 210px;
-  padding-bottom: ${props => props.theme.space[2]};
-`;
 
 const sliderOptions = {
     type: 'carousel',
@@ -151,5 +132,24 @@ const HomeOurLiders = () => {
         </Container>
     );
 }
+
+const SlideBox = styled.li`
+  width: 100%;
+  //min-height: 300px;
+  position: relative;
+  list-style: none;
+  background-size: cover;
+  padding: 3rem;
+  background-color: ${props => props.theme.blackColor};
+`;
+
+// const SlideVideo = styled.div`
+//   padding: 1rem;
+// `;
+
+const TextContainer = styled.div`
+  max-width: 210px;
+  padding-bottom: ${props => props.theme.space[2]};
+`;
 
 export default HomeOurLiders;

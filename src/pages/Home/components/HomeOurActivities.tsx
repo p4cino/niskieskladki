@@ -1,31 +1,10 @@
 import {Col, Container, Row} from "styled-bootstrap-grid";
 import styled from 'styled-components';
-import Image from 'next/image';
+// import Image from 'next/image';
 import ReactPlayer from 'react-player/youtube'
 import Heading from "../../../components/Heading/Heading";
 import Paragraph from "../../../components/Paragraph/Paragraph";
 import ArticleCarousel from "../../../components/ArticleCarousel/ArticleCarousel";
-
-const SlideBox = styled.li`
-  width: 100%;
-  //min-height: 300px;
-  position: relative;
-  list-style: none;
-`;
-
-// const SlideVideo = styled.div`
-//   padding: 1rem;
-// `;
-
-const TextContainer = styled.div`
-  padding-top: ${props => props.theme.space[3]};
-`;
-
-const sliderOptions = {
-    type: 'carousel',
-    gap: 0,
-    perView: 1,
-};
 
 const HomeOurActivities = () => {
     return (
@@ -149,5 +128,26 @@ const HomeOurActivities = () => {
         </Container>
     );
 }
+
+const SlideBox = styled.li`
+  width: 100%;
+  //min-height: 300px;
+  position: relative;
+  list-style: none;
+`;
+
+// const SlideVideo = styled.div`
+//   padding: 1rem;
+// `;
+
+const TextContainer = styled.div`
+  padding-top: ${props => props.theme.space[3]};
+`;
+
+const sliderOptions = {
+    type: 'carousel',
+    gap: 0,
+    perView: 1,
+};
 
 export default HomeOurActivities;

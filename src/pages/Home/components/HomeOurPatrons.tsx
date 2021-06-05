@@ -1,26 +1,11 @@
 import {Col, Container, Row} from "styled-bootstrap-grid";
 import styled from 'styled-components';
-import Image from 'next/image';
-import Skeleton from '@material-ui/lab/Skeleton';
+// import Image from 'next/image';
+// import Skeleton from '@material-ui/lab/Skeleton';
 import ReactPlayer from 'react-player/youtube'
 import Heading from "../../../components/Heading/Heading";
 import Paragraph from "../../../components/Paragraph/Paragraph";
 import ArticleCarousel from "../../../components/ArticleCarousel/ArticleCarousel";
-
-const SlideBox = styled.li`
-  width: 100%;
-  //min-height: 300px;
-  position: relative;
-  list-style: none;
-`;
-
-// const SlideVideo = styled.div`
-//   padding: 1rem;
-// `;
-
-const TextContainer = styled.div`
-  padding-top: ${props => props.theme.space[3]};
-`;
 
 const sliderOptions = {
     type: 'carousel',
@@ -123,5 +108,20 @@ const HomeOurPatrons = () => {
         </Container>
     );
 }
+
+const SlideBox = styled.li`
+  width: 100%;
+  //min-height: 300px;
+  position: relative;
+  list-style: none;
+`;
+
+// const SlideVideo = styled.div`
+//   padding: 1rem;
+// `;
+
+const TextContainer = styled.div`
+  padding-top: ${props => props.theme.space[3]};
+`;
 
 export default HomeOurPatrons;

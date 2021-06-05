@@ -28,7 +28,8 @@ const HomeOurPatron = () => {
     const [fire, setFire] = useState(false);
     const ref = useRef();
     const isVisible = useOnScreen(ref);
-    const progressRef = useRef(() => {});
+    const progressRef = useRef(() => {
+    });
 
     useEffect(() => {
         progressRef.current = () => {
