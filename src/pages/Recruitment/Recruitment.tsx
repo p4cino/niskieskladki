@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from '../../components/Navbar/Navbar';
 
 // const BackgroundSection = styled.div`
 //   background-size: cover;
@@ -25,10 +25,10 @@ import Navbar from "../../components/Navbar/Navbar";
 const Recruitment = () => {
     return (
         <>
-            <Navbar/>
+            <Navbar />
             Test
         </>
     );
-}
+};
 
 export default Recruitment;
