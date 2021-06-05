@@ -47,5 +47,6 @@ module.exports = {
         '@typescript-eslint/no-empty-function': 'warn',
         '@typescript-eslint/ban-ts-comment': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
+        'jsx-a11y/anchor-is-valid': 'warn'
     }
 };
