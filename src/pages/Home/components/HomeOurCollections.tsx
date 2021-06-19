@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import Carousel from '../../../components/Carousel/Carousel';
 import Heading from '../../../components/Heading/Heading';
 import Paragraph from '../../../components/Paragraph/Paragraph';
+import zuzia from '../images/collections/ns-dla-malej-zuzi.png';
 
 function CircularProgressWithLabel(
     properties: CircularProgressProps & { value: number }
@@ -22,6 +23,9 @@ function CircularProgressWithLabel(
                 <CircularProgress
                     variant="determinate"
                     color={'secondary'}
+                    title={`Postęp zbiórki wynosi: ${Math.round(
+                        properties.value
+                    )}%`}
                     {...properties}
                 />
                 <ProgressLabel>{`${Math.round(
@@ -102,9 +106,14 @@ const HomeOurCollections = () => {
                         <SlideBox>
                             <SlideImage>
                                 <Image
+                                    blurDataURL={
+                                        '/images/collections/ns-dla-malej-zuzi.png'
+                                    }
                                     src={
                                         '/images/collections/ns-dla-malej-zuzi.png'
                                     }
+                                    placeholder="blur"
+                                    alt=""
                                     width={359}
                                     height={125}
                                 />
@@ -136,9 +145,14 @@ const HomeOurCollections = () => {
                         <SlideBox>
                             <SlideImage>
                                 <Image
+                                    blurDataURL={
+                                        '/images/collections/dzien-dziecka-z-grupa-niskie-skladki.png'
+                                    }
                                     src={
                                         '/images/collections/dzien-dziecka-z-grupa-niskie-skladki.png'
                                     }
+                                    alt=""
+                                    placeholder="blur"
                                     width={359}
                                     height={125}
                                 />
@@ -167,9 +181,14 @@ const HomeOurCollections = () => {
                         <SlideBox>
                             <SlideImage>
                                 <Image
+                                    blurDataURL={
+                                        '/images/collections/fundusz-stypendialny.png'
+                                    }
                                     src={
                                         '/images/collections/fundusz-stypendialny.png'
                                     }
+                                    alt=""
+                                    placeholder="blur"
                                     width={359}
                                     height={125}
                                 />

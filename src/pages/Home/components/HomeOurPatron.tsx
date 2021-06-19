@@ -228,6 +228,7 @@ const HomeOurPatron = () => {
                             variant="buffer"
                             value={progress}
                             valueBuffer={buffer}
+                            title="Cel zbiórki"
                         />
                     </Col>
                 </Row>
