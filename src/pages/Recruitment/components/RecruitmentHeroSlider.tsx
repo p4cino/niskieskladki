@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Button from '../../../components/Button/Button';
 import Carousel from '../../../components/Carousel/Carousel';
 
-const HomeHeroSlider = () => {
+const RecruitmentHeroSlider = () => {
     const sliderOptions = {
         type: 'carousel',
         // autoplay: 5000,
@@ -43,34 +43,6 @@ const HomeHeroSlider = () => {
                                     <Button>Dołącz do nas</Button>
                                 </SliderButtonItem>
                             </SliderButtonWrapper>
-                        </Col>
-                    </Row>
-                </Container>
-            </SlideBox>
-            <SlideBox
-                style={{ backgroundImage: 'url(/images/welcome/hands2.webp)' }}
-            >
-                <Container style={{ height: '100%' }}>
-                    <Row style={{ height: '100%' }}>
-                        <Col
-                            xl="12"
-                            lg="12"
-                            md="12"
-                            sm="12"
-                            alignSelf={'center'}
-                        >
-                            <SliderHeading>
-                                Niskie Składki
-                                <br />
-                                <span
-                                    style={{
-                                        fontWeight: 'bold',
-                                        paddingLeft: '6px'
-                                    }}
-                                >
-                                    Twoje Źródło RIGCZU
-                                </span>
-                            </SliderHeading>
                         </Col>
                     </Row>
                 </Container>
@@ -132,4 +104,4 @@ const SliderButtonItem = styled.div`
     }
 `;
 
-export default HomeHeroSlider;
+export default RecruitmentHeroSlider;
