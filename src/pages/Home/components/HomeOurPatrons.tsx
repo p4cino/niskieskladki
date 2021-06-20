@@ -1,6 +1,4 @@
-// import Image from 'next/image';
-// import Skeleton from '@material-ui/lab/Skeleton';
-import ReactPlayer from 'react-player/youtube';
+import YouTube from 'react-youtube';
 import { Col, Container, Row } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
@@ -12,6 +10,15 @@ const sliderOptions = {
     type: 'carousel',
     gap: 0,
     perView: 1
+};
+
+const youtubeOptions = {
+    height: '350',
+    width: '100%',
+    playerVars: {
+        // https://developers.google.com/youtube/player_parameters
+        autoplay: 0
+    }
 };
 
 const HomeOurPatrons = () => {
@@ -64,12 +71,9 @@ const HomeOurPatrons = () => {
                                     xsOrder={1}
                                 >
                                     <div style={{ height: 350 }}>
-                                        <ReactPlayer
-                                            height="350px"
-                                            width="100%"
-                                            url="https://www.youtube.com/watch?v=9_3YFNGttgI"
-                                            controls={true}
-                                            // onReady={() => console.log('kek')}
+                                        <YouTube
+                                            videoId="9_3YFNGttgI"
+                                            opts={youtubeOptions}
                                         />
                                     </div>
                                 </Col>

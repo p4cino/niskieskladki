@@ -179,12 +179,12 @@ const HomeOurPatron = () => {
                                     </Heading>
                                 </div>
                                 <Paragraph color={'white'}>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Beatae dolorem eius et
-                                    facere, fuga, hic itaque natus officia optio
-                                    praesentium quae quasi, quisquam sunt ullam
-                                    veritatis! Dignissimos itaque laboriosam
-                                    qui.
+                                    Kiedy działający człowiek dobiera środki
+                                    służące osiągnięciu celów, zawsze w
+                                    pierwszej kolejnościsięga po teorię. U
+                                    podstaw praktyki leży zawsze jakaś teoria.
+                                    Dzięki edukacji możemy ją zdobyć i pchać
+                                    świat ku lepszemu.
                                 </Paragraph>
                             </Col>
                             <Col xl="6" lg="6" md="6" sm="6" xs="12">
@@ -200,12 +200,10 @@ const HomeOurPatron = () => {
                                     </Heading>
                                 </div>
                                 <Paragraph color={'white'}>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Ab accusamus ad blanditiis
-                                    consectetur consequatur consequuntur cumque
-                                    hic inventore, iste, maiores minima modi
-                                    molestiae placeat qui reprehenderit saepe
-                                    sunt ullam voluptatem.
+                                    Zdobywając teorię pozyskujemy wiedzę.
+                                    Pozyskawszy wiedzę możemy posiąć mądrość.
+                                    Posiadając odpowiednią mądrość możemy podjąć
+                                    #ludzkieDziałanie.
                                 </Paragraph>
                             </Col>
                         </Row>

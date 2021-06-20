@@ -1,8 +1,8 @@
 #Niskie Składki
 
-React 17.0.1
+React 17.0.2
 
-NextJS 10
+NextJS 11
 
 Styled Components
 

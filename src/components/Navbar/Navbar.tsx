@@ -63,41 +63,23 @@ const Navbar = () => {
                             })}
                         >
                             <List>
+                                {/*<ListItem>*/}
+                                {/*    <Link href="/">*/}
+                                {/*        <ListItemLink*/}
+                                {/*            className={classNames({*/}
+                                {/*                active: true*/}
+                                {/*            })}*/}
+                                {/*        >*/}
+                                {/*            Home*/}
+                                {/*        </ListItemLink>*/}
+                                {/*    </Link>*/}
+                                {/*</ListItem>*/}
                                 <ListItem>
-                                    <ListItemLink
-                                        className={classNames({ active: true })}
-                                        href="#"
-                                    >
-                                        O Nas
-                                    </ListItemLink>
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemLink href="#">
-                                        Zbiórki
-                                    </ListItemLink>
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemLink href="#">
-                                        Działalność
-                                    </ListItemLink>
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemLink href="#">Zespół</ListItemLink>
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemLink href="#">
-                                        Partnerzy
-                                    </ListItemLink>
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemLink href="#">
-                                        Kontakt
-                                    </ListItemLink>
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemLink className="blue" href="#">
-                                        Dołącz do nas
-                                    </ListItemLink>
+                                    <Link href="/rekrutacja">
+                                        <ListItemLink className="blue">
+                                            Dołącz do nas
+                                        </ListItemLink>
+                                    </Link>
                                 </ListItem>
                             </List>
                         </Nav>
@@ -156,10 +138,7 @@ const Nav = styled.nav`
     ${media.xs`
     display: none;
   `}
-    ${media.md`
-    display: none;
-  `}
-  &.activeMenu {
+    &.activeMenu {
         position: fixed;
         top: 0;
         left: 0;
@@ -183,6 +162,7 @@ const Nav = styled.nav`
         background-color: ${properties => properties.theme.blackColor};
         height: 100vh;
         width: 100vw;
+        justify-content: center;
     }
 `;
 
@@ -197,16 +177,17 @@ const List = styled.ul`
     flex-wrap: wrap;
     font-size: 1.5rem;
   `}
+    ${media.lg`
+  `}
 
-  height: 2rem;
+    height: 2rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-wrap: nowrap;
     list-style: none;
     padding: 0;
-    margin: 0;
-    margin-top: 5px;
+    margin: 5px 0 0;
 `;
 
 const ListItem = styled.li`
@@ -226,6 +207,13 @@ const ListItem = styled.li`
     margin-top: 1rem;
     }
   `}
+    ${media.lg`
+     width: auto;
+     font-size: 1.1rem;
+     & + & {
+        margin: 0 1rem 0 1rem;
+    }
+  `}
 
   padding: 0 ${properties => properties.theme.space[0]};
     letter-spacing: 0.5px;
@@ -241,20 +229,21 @@ const ListItem = styled.li`
 
 const ListItemLink = styled.a`
     text-decoration: none;
-    color: ${properties => properties.theme.whiteColor};
+    cursor: pointer;
+    //color: ${properties => properties.theme.whiteColor};
 
-    .scrolled & {
-        color: ${properties => properties.theme.grayColor};
-
-        &.active {
-            color: red;
-            font-weight: bold;
-        }
-    }
+    // .scrolled & {
+    //     color: ${properties => properties.theme.grayColor};
+    //
+    //     &.active {
+    //         color: red;
+    //         font-weight: bold;
+    //     }
+    // }
 
     &.active {
         font-weight: bold;
-        color: white;
+        color: red;
     }
 
     &.blue {

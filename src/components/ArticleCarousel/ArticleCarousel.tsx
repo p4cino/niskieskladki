@@ -59,7 +59,7 @@ const ArticleCarousel = ({ element = 'glide', options, children }) => {
 
 const GlideBox = styled.section`
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
     user-select: none;
     max-width: 100vw;
 `;
