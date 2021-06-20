@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import YouTube from 'react-youtube';
 import { Col, Container, Row } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
@@ -177,12 +178,21 @@ const HomeOurActivities = () => {
                                     xs="12"
                                     xsOrder={1}
                                 >
-                                    <div>
-                                        <img
-                                            style={{ width: '100%' }}
-                                            src="/images/section/Veto_TVP.png"
+                                    <div style={{ height: 350 }}>
+                                        <Image
+                                            blurDataURL={
+                                                '/images/section/Veto_TVP.png'
+                                            }
+                                            src={'/images/section/Veto_TVP.png'}
+                                            placeholder="blur"
                                             alt=""
+                                            layout="fill"
                                         />
+                                        {/*<img*/}
+                                        {/*    style={{width: '100%'}}*/}
+                                        {/*    src="/images/section/Veto_TVP.png"*/}
+                                        {/*    alt=""*/}
+                                        {/*/>*/}
                                     </div>
                                 </Col>
                                 <Col

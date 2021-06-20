@@ -187,7 +187,7 @@ const List = styled.ul`
     flex-wrap: nowrap;
     list-style: none;
     padding: 0;
-    margin: 5px 0 0;
+    margin: 8px 0 0 0;
 `;
 
 const ListItem = styled.li`

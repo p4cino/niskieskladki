@@ -29,6 +29,7 @@ const HomeOurPatron = () => {
     const [fire, setFire] = useState(false);
     const reference = useRef();
     const isVisible = useOnScreen(reference);
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     const progressReference = useRef(() => {});
 
     useEffect(() => {

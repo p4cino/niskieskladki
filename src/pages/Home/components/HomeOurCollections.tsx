@@ -8,7 +8,6 @@ import styled from 'styled-components';
 import Carousel from '../../../components/Carousel/Carousel';
 import Heading from '../../../components/Heading/Heading';
 import Paragraph from '../../../components/Paragraph/Paragraph';
-import zuzia from '../images/collections/ns-dla-malej-zuzi.png';
 
 function CircularProgressWithLabel(
     properties: CircularProgressProps & { value: number }
@@ -107,10 +106,10 @@ const HomeOurCollections = () => {
                             <SlideImage>
                                 <Image
                                     blurDataURL={
-                                        '/images/collections/ns-dla-malej-zuzi.png'
+                                        '/images/collections/ns-dla-malej-zuzi.webp'
                                     }
                                     src={
-                                        '/images/collections/ns-dla-malej-zuzi.png'
+                                        '/images/collections/ns-dla-malej-zuzi.webp'
                                     }
                                     placeholder="blur"
                                     alt=""
@@ -146,10 +145,10 @@ const HomeOurCollections = () => {
                             <SlideImage>
                                 <Image
                                     blurDataURL={
-                                        '/images/collections/dzien-dziecka-z-grupa-niskie-skladki.png'
+                                        '/images/collections/dzien-dziecka-z-grupa-niskie-skladki.webp'
                                     }
                                     src={
-                                        '/images/collections/dzien-dziecka-z-grupa-niskie-skladki.png'
+                                        '/images/collections/dzien-dziecka-z-grupa-niskie-skladki.webp'
                                     }
                                     alt=""
                                     placeholder="blur"
@@ -182,10 +181,10 @@ const HomeOurCollections = () => {
                             <SlideImage>
                                 <Image
                                     blurDataURL={
-                                        '/images/collections/fundusz-stypendialny.png'
+                                        '/images/collections/fundusz-stypendialny.webp'
                                     }
                                     src={
-                                        '/images/collections/fundusz-stypendialny.png'
+                                        '/images/collections/fundusz-stypendialny.webp'
                                     }
                                     alt=""
                                     placeholder="blur"

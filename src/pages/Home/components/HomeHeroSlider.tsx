@@ -15,7 +15,7 @@ const HomeHeroSlider = () => {
     return (
         <Carousel element="heroSlider" options={sliderOptions}>
             <SlideBox
-                style={{ backgroundImage: 'url(/images/welcome/hands.jpg)' }}
+                style={{ backgroundImage: 'url(/images/welcome/hands.webp)' }}
             >
                 <Container style={{ height: '100%' }}>
                     <Row style={{ height: '100%' }}>
@@ -48,7 +48,7 @@ const HomeHeroSlider = () => {
                 </Container>
             </SlideBox>
             <SlideBox
-                style={{ backgroundImage: 'url(/images/welcome/hands2.jpg)' }}
+                style={{ backgroundImage: 'url(/images/welcome/hands2.webp)' }}
             >
                 <Container style={{ height: '100%' }}>
                     <Row style={{ height: '100%' }}>
