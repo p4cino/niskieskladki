@@ -96,6 +96,7 @@ const HomeOurActivities = () => {
                                     <div>
                                         <YouTube
                                             videoId="9_3YFNGttgI"
+                                            // @ts-ignore
                                             opts={youtubeOptions}
                                         />
                                     </div>

@@ -73,6 +73,7 @@ const HomeOurPatrons = () => {
                                     <div style={{ height: 350 }}>
                                         <YouTube
                                             videoId="9_3YFNGttgI"
+                                            // @ts-ignore
                                             opts={youtubeOptions}
                                         />
                                     </div>
