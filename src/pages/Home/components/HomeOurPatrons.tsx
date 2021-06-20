@@ -6,22 +6,22 @@ import ArticleCarousel from '../../../components/ArticleCarousel/ArticleCarousel
 import Heading from '../../../components/Heading/Heading';
 import Paragraph from '../../../components/Paragraph/Paragraph';
 
-const sliderOptions = {
-    type: 'carousel',
-    gap: 0,
-    perView: 1
-};
-
-const youtubeOptions = {
-    height: '350',
-    width: '100%',
-    playerVars: {
-        // https://developers.google.com/youtube/player_parameters
-        autoplay: 0
-    }
-};
-
 const HomeOurPatrons = () => {
+    const sliderOptions = {
+        type: 'carousel',
+        gap: 0,
+        perView: 1
+    };
+
+    const youtubeOptions = {
+        height: '350',
+        width: '100%',
+        playerVars: {
+            // https://developers.google.com/youtube/player_parameters
+            autoplay: 0
+        }
+    };
+
     return (
         <Container style={{ height: '100%' }}>
             <Row style={{ height: '100%' }}>

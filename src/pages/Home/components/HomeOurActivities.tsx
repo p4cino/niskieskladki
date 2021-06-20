@@ -1,5 +1,4 @@
-// import Image from 'next/image';
-import ReactPlayer from 'react-player/youtube';
+import YouTube from 'react-youtube';
 import { Col, Container, Row } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
@@ -8,6 +7,15 @@ import Heading from '../../../components/Heading/Heading';
 import Paragraph from '../../../components/Paragraph/Paragraph';
 
 const HomeOurActivities = () => {
+    const youtubeOptions = {
+        height: '350',
+        width: '100%',
+        playerVars: {
+            // https://developers.google.com/youtube/player_parameters
+            autoplay: 0
+        }
+    };
+
     return (
         <Container style={{ height: '100%' }}>
             <Row style={{ height: '100%' }}>
@@ -86,11 +94,9 @@ const HomeOurActivities = () => {
                                     xsOrder={1}
                                 >
                                     <div>
-                                        <ReactPlayer
-                                            height={290}
-                                            width="100%"
-                                            url="https://www.youtube.com/watch?v=9_3YFNGttgI"
-                                            controls={true}
+                                        <YouTube
+                                            videoId="9_3YFNGttgI"
+                                            opts={youtubeOptions}
                                         />
                                     </div>
                                 </Col>
