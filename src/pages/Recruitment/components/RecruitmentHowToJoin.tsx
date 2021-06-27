@@ -40,7 +40,11 @@ const RecruitmentHowToJoin = () => {
                             28 1090 2590 0000 0001 4662 9737
                         </span>
                     </Paragraph>
-                    <Paragraph center style={{ marginBottom: '1rem' }}>
+                    <Paragraph
+                        center
+                        // @ts-ignore
+                        style={{ marginBottom: '1rem' }}
+                    >
                         W treści przelewu należy podać swój PESEL oraz okres na
                         który zostają opłacone składki członkowskie.
                     </Paragraph>
@@ -58,7 +62,11 @@ const RecruitmentHowToJoin = () => {
                         pomocą urządzenia mobilnego.
                     </Paragraph>
 
-                    <Paragraph center style={{ margin: '1rem 0' }}>
+                    <Paragraph
+                        center
+                        // @ts-ignore
+                        style={{ margin: '1rem 0' }}
+                    >
                         <Link
                             href="/pdf/Instrukcja_Deklaracja_NS.pdf"
                             target="_blank"
