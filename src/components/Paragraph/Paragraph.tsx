@@ -68,6 +68,10 @@ const ParagraphStyle = styled.p`
         line-height: 1.5rem;
     }
 
+    &.big {
+        font-size: 3rem;
+    }
+
     &.center {
         text-align: center;
     }

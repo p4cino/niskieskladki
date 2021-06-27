@@ -139,7 +139,7 @@ const Nav = styled.nav`
     display: none;
   `}
     &.activeMenu {
-        position: fixed;
+        position: sticky;
         top: 0;
         left: 0;
         width: 100vw;
@@ -232,14 +232,14 @@ const ListItemLink = styled.a`
     cursor: pointer;
     //color: ${properties => properties.theme.whiteColor};
 
-    // .scrolled & {
-    //     color: ${properties => properties.theme.grayColor};
-    //
-    //     &.active {
-    //         color: red;
-    //         font-weight: bold;
-    //     }
-    // }
+    .scrolled & {
+        color: ${properties => properties.theme.grayColor};
+
+        &.active {
+            color: red;
+            font-weight: bold;
+        }
+    }
 
     &.active {
         font-weight: bold;

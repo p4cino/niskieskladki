@@ -1,3 +1,4 @@
+import Link from '@material-ui/core/Link';
 import { Col, Container, Row } from 'styled-bootstrap-grid';
 
 import Heading from '../../../components/Heading/Heading';
@@ -17,18 +18,7 @@ const RecruitmentHowToJoin = () => {
                         }}
                     >
                         <Heading color="main" underline={false}>
-                            <span>Jak</span>
-                            <span
-                                style={{
-                                    padding: 5,
-                                    marginLeft: 5,
-                                    backgroundColor: '#cd0000',
-                                    color: 'white'
-                                }}
-                            >
-                                do nas
-                            </span>
-                            <span>dołączyć</span>
+                            Jak dołączyć
                         </Heading>
                     </div>
                     <Paragraph center>
@@ -50,7 +40,7 @@ const RecruitmentHowToJoin = () => {
                             28 1090 2590 0000 0001 4662 9737
                         </span>
                     </Paragraph>
-                    <Paragraph center>
+                    <Paragraph center style={{ marginBottom: '1rem' }}>
                         W treści przelewu należy podać swój PESEL oraz okres na
                         który zostają opłacone składki członkowskie.
                     </Paragraph>
@@ -67,15 +57,17 @@ const RecruitmentHowToJoin = () => {
                         Deklarację możesz wypełnić również bez drukowania, za
                         pomocą urządzenia mobilnego.
                     </Paragraph>
-                    <Paragraph center>
-                        <a
-                            target="_blank"
+
+                    <Paragraph center style={{ margin: '1rem 0' }}>
+                        <Link
                             href="/pdf/Instrukcja_Deklaracja_NS.pdf"
+                            target="_blank"
                         >
                             Kliknij, aby pobrać instrukcję dla urządzeń
                             mobilnych
-                        </a>
+                        </Link>
                     </Paragraph>
+
                     <Paragraph center>
                         <strong>2.</strong> Wyślij jej skan, dobrej jakości
                         zdjęcie lub wypełnioną e-deklarację na adres

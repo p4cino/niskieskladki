@@ -59,22 +59,29 @@ const HeadingStyle = styled.h2`
     }
 `;
 
-type Color = 'black' | 'gray' | 'red' | 'main' | 'text' | 'heading' | 'white';
-type Size = 'smallest' | 'small' | 'normal' | 'medium' | 'large';
-type Type = 'h1' | 'h2' | 'h3';
+export type HeadingColor =
+    | 'black'
+    | 'gray'
+    | 'red'
+    | 'main'
+    | 'text'
+    | 'heading'
+    | 'white';
+export type HeadingSize = 'smallest' | 'small' | 'normal' | 'medium' | 'large';
+export type HeadingsTypes = 'h1' | 'h2' | 'h3';
 
 type Properties = {
-    size?: Size;
-    color?: Color;
+    size?: HeadingSize;
+    color?: HeadingColor;
     children: any;
     underline?: boolean;
-    type?: Type;
+    type?: HeadingsTypes;
 };
 
 const Heading: FunctionComponent<Properties> = ({
     size,
     color,
-    underline = true,
+    underline = false,
     type,
     children,
     ...properties

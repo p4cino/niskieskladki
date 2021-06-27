@@ -18,7 +18,7 @@ const Footer = () => {
                 <Row alignItems="center">
                     <Col xl="6" lg="6" md="6" sm="6" xs={'6'}>
                         <Paragraph color={'white'} size={'small'}>
-                            © Niskie Składki 2020 Create with
+                            © Niskie Składki 2021 Create with
                             <a
                                 style={{ textDecoration: 'none' }}
                                 href="https://www.linkedin.com/in/🚀wojciech-puzio-311422137/"

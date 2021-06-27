@@ -1,8 +1,10 @@
+import Image from 'next/image';
 import { Col, Container, Row } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
 import Button from '../../../components/Button/Button';
 import Carousel from '../../../components/Carousel/Carousel';
+import Hero from '../../../components/Hero';
 
 const RecruitmentHeroSlider = () => {
     const sliderOptions = {
@@ -12,63 +14,8 @@ const RecruitmentHeroSlider = () => {
         perView: 1
     };
 
-    return (
-        <Carousel element="heroSlider" options={sliderOptions}>
-            <SlideBox
-                style={{ backgroundImage: 'url(/images/welcome/hands.webp)' }}
-            >
-                <Container style={{ height: '100%' }}>
-                    <Row style={{ height: '100%' }}>
-                        <Col
-                            xl="12"
-                            lg="12"
-                            md="12"
-                            sm="12"
-                            alignSelf={'center'}
-                        >
-                            <SliderHeading>
-                                Niskie Składki
-                                <br />
-                                <span style={{ fontWeight: 'bold' }}>
-                                    Twoje Źródło RIGCZU
-                                </span>
-                            </SliderHeading>
-                            <SliderDescription>
-                                Aby zmienić świat trzeba zaczać od zmiany
-                                jednostki. Rozwój jednostki jest gwarancją
-                                rozwoju całej cywilizacji.
-                            </SliderDescription>
-                            <SliderButtonWrapper>
-                                <SliderButtonItem>
-                                    <Button>Dołącz do nas</Button>
-                                </SliderButtonItem>
-                            </SliderButtonWrapper>
-                        </Col>
-                    </Row>
-                </Container>
-            </SlideBox>
-        </Carousel>
-    );
+    return <></>;
 };
-
-const SlideBox = styled.li`
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    :before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        position: absolute;
-        background: rgba(0, 0, 0, 0.5);
-    }
-`;
 
 const SliderHeading = styled.h2`
     padding: 0;
