@@ -44,7 +44,7 @@ const HeroSection = styled.section`
     align-items: center;
     background-size: cover;
     background-position: center;
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     top: 0;
     left: 0;
     z-index: -1;
@@ -55,7 +55,12 @@ const HeroSection = styled.section`
         width: 100%;
         height: 100%;
         position: absolute;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0),
+            rgba(0, 0, 0, 0.73)
+        );
+        //background-color: rgba(0, 0, 0, 0.5);
     }
 `;
 

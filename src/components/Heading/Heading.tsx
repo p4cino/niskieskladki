@@ -68,7 +68,7 @@ export type HeadingColor =
     | 'heading'
     | 'white';
 export type HeadingSize = 'smallest' | 'small' | 'normal' | 'medium' | 'large';
-export type HeadingsTypes = 'h1' | 'h2' | 'h3';
+export type HeadingsTypes = 'h1' | 'h2' | 'h3' | 'h4';
 
 type Properties = {
     size?: HeadingSize;

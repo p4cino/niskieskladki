@@ -1,4 +1,5 @@
 import Link from '@material-ui/core/Link';
+import { FiCopy } from 'react-icons/fi';
 import { Col, Container, Row } from 'styled-bootstrap-grid';
 
 import Heading from '../../../components/Heading/Heading';
@@ -27,18 +28,39 @@ const RecruitmentHowToJoin = () => {
                     </Paragraph>
                     <Paragraph center>
                         Wpisowe i składki należy opłacić przelewem na konto
-                        bankowe Stowarzyszenia:{' '}
-                        <span
+                        bankowe Stowarzyszenia:
+                        <button
                             style={{
-                                padding: 5,
-                                marginLeft: 5,
-                                backgroundColor: '#cd0000',
-                                color: 'white',
-                                fontWeight: 'bold'
+                                border: 0,
+                                backgroundColor: 'transparent',
+                                cursor: 'pointer'
+                            }}
+                            onClick={() => {
+                                navigator.clipboard.writeText(
+                                    '28 1090 2590 0000 0001 4662 9737'
+                                );
                             }}
                         >
-                            28 1090 2590 0000 0001 4662 9737
-                        </span>
+                            <span
+                                style={{
+                                    padding: 5,
+                                    backgroundColor: '#cd0000',
+                                    color: 'white',
+                                    fontWeight: 'bold',
+                                    whiteSpace: 'nowrap',
+                                    display: 'flex'
+                                }}
+                            >
+                                28 1090 2590 0000 0001 4662 9737
+                                <FiCopy
+                                    size="1rem"
+                                    title="Skopiuj numer konta"
+                                    style={{
+                                        marginLeft: '0.5rem'
+                                    }}
+                                />
+                            </span>
+                        </button>
                     </Paragraph>
                     <Paragraph
                         center
@@ -79,17 +101,24 @@ const RecruitmentHowToJoin = () => {
                     <Paragraph center>
                         <strong>2.</strong> Wyślij jej skan, dobrej jakości
                         zdjęcie lub wypełnioną e-deklarację na adres
-                        <span
+                        <a
                             style={{
-                                padding: 5,
-                                marginLeft: 5,
-                                backgroundColor: '#cd0000',
-                                color: 'white',
-                                fontWeight: 'bold'
+                                textDecoration: 'none'
                             }}
+                            href="mailto:deklaracje@niskieskladki.pl"
                         >
-                            deklaracje@niskieskladki.pl
-                        </span>
+                            <span
+                                style={{
+                                    padding: 5,
+                                    marginLeft: 5,
+                                    backgroundColor: '#cd0000',
+                                    color: 'white',
+                                    fontWeight: 'bold'
+                                }}
+                            >
+                                deklaracje@niskieskladki.pl
+                            </span>
+                        </a>
                     </Paragraph>
                     <Paragraph center>
                         <strong>3.</strong> W przeciągu 14 dni członek Rady
